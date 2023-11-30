@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Container } from 'react-bootstrap'
-import styles from '../components/AllFoundItems.css'
-import MapContainer from './MapContainer'
+import styles from './AllFoundItems.css'
+import MapContainer from '../map/MapContainer'
 
 const AllFoundItems = () => {
     // const [foundItemsData, setFoundItemsData] = useState([]);

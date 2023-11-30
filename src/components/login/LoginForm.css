@@ -1,0 +1,5 @@
+.login-form-main {
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+}

@@ -1,0 +1,15 @@
+.register-form-main {
+  display: flex;
+  flex-direction: column;
+  gap:25px;
+}
+
+.gender-form {
+  display: flex;
+  gap:10px;
+}
+
+.gender-form-inside {
+  display: flex;
+  gap:3px;
+}

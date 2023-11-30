@@ -1,0 +1,10 @@
+.main-window {
+    width: 50%;
+    margin: 10px auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-window {
+        width: 100%;
+    }
+}
