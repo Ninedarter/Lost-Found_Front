@@ -8,11 +8,10 @@ import "./LoginForm.css";
 import axiosInstance from "../../api/customAxios";
 import {useAuth} from "../../provider/authProvider";
 import {useNavigate} from "react-router-dom";
-import {show} from "../../App";
 import {toast} from "react-toastify";
 
 const LoginForm = () => {
-    const {setToken} = useAuth();
+    const {setToken, setRefreshToken} = useAuth();
     const navigate = useNavigate();
 
     const [email, setEmail] = useState("")
@@ -21,6 +20,16 @@ const LoginForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if(email.length<4) {
+            toast.warning("Email too short. Min. 4")
+            return
+        }
+
+        if(password.length<4) {
+            toast.warning("Password too short. Min. 4")
+            return
+        }
+
 
         axiosInstance.post("/api/v1/auth/authenticate", {
             "email": email,
@@ -28,6 +37,7 @@ const LoginForm = () => {
         })
             .then(response => {
                 setToken(response.data.access_token)
+                setRefreshToken(response.data.refresh_token)
                 navigate("/main/index")
             })
             .catch(error => {
@@ -53,6 +63,7 @@ const LoginForm = () => {
                            value={email}
                            onChange={(e) => setEmail(e.target.value)}
                            style={{width: "100%"}}
+                           minLength={4}
                 />
                 <label htmlFor="email">Email</label>
             </span>
@@ -62,13 +73,13 @@ const LoginForm = () => {
                            onChange={(e) => setPassword(e.target.value)}
                            type={"password"}
                            style={{width: "100%"}}
+                           minLength={4}
                 />
                 <label htmlFor="password">Password</label>
             </span>
 
 
                 <Button label="Submit"
-                        disabled={email.length === 0 || password.length === 0}
                         onClick={(e) => handleSubmit(e)}
                 />
             </div>

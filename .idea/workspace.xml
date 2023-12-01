@@ -5,37 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d4753eb-9cd9-486b-bd15-221621c94554" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/icona.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/customAxios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main/Main.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navbar/NavigationBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/successMessage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/provider/authProvider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllFoundItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/foundItems/AllFoundItems.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllFoundItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/foundItems/AllFoundItems.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllLostItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lostItems/AllLostItems.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllLostItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lostItems/AllLostItems.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FoundItemAddForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/foundItems/FoundItemAddForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/LoginForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LostItemAddForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lostItems/LostItemAddForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MapContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/MapContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RegisterForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register/RegisterForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register/RegisterForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProtectedRoute.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/UserPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logout/Logout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/customAxios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/customAxios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/LoginForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/register/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register/RegisterForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/successMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/successMessage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/provider/authProvider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/provider/authProvider.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,23 +34,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/motie/Desktop/LostAndFound/Lost-Found_Front",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/motie/Desktop/LostAndFound/Lost-Found_Front&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src" />

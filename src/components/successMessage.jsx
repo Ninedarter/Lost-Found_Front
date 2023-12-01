@@ -5,7 +5,7 @@ const SuccessMessage = () => {
 
     const [message, setMessage] = useState("")
 
-    axiosInstance.get("/api/v1/demo-controller")
+    axiosInstance.get("/api/v1/demo-controller/")
         .then(response => {
             if(response.data) {
                 setMessage(response.data)

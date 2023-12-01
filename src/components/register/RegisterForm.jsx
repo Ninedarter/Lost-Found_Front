@@ -7,8 +7,14 @@ import {Button} from "primereact/button";
 import "./RegisterForm.css";
 import {Calendar} from "primereact/calendar";
 import {RadioButton} from "primereact/radiobutton";
+import axiosInstance from "../../api/customAxios";
+import {toast} from "react-toastify";
+import {useAuth} from "../../provider/authProvider";
+import {useNavigate} from "react-router-dom";
 
 const RegisterForm = () => {
+    const {setToken, setRefreshToken} = useAuth();
+    const navigate = useNavigate();
 
     const [name, setName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -18,6 +24,73 @@ const RegisterForm = () => {
     const [dob, setDob] = useState()
     const [number, setNumber] = useState("")
     const [gender, setGender] = useState("")
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if(name.length<4) {
+            toast.warning("First name too short. Min 4")
+            return
+        }
+        if(lastName.length<4) {
+            toast.warning("Last name too short. Min 4")
+            return
+        }
+        if(email.length<4) {
+            toast.warning("Email too short. Min 4")
+            return
+        }
+        if(password.length<4) {
+            toast.warning("Password too short. Min 4")
+            return
+        }
+        if(!!!dob) {
+            toast.warning("Please choose date of birth")
+            return
+        }
+
+        if(number.length<6) {
+            toast.warning("Number too short. Min 6")
+            return
+        }
+
+        if(!gender) {
+            toast.warning("Please select your gender")
+            return
+        }
+
+        if(password !== password2) {
+            toast.warning("Passwords do not match")
+            return
+        }
+
+
+        axiosInstance.post("/api/v1/auth/register", {
+            "firstname": name,
+            "lastname": lastName,
+            "email": email,
+            "password": password,
+            "dob": dob.toISOString().substring(0,10),
+            "phoneNumber": number,
+            "gender": gender
+        })
+            .then(response => {
+                setToken(response.data.access_token)
+                setRefreshToken(response.data.refresh_token)
+                navigate("/main/index")
+            })
+            .catch(error => {
+                toast.error("Something went wrong. Maybe email is already taken?");
+                if (error.response) {
+                    console.error("Error status:", error.response.status);
+                    console.error("Error data:", error.response.data);
+                } else if (error.request) {
+                    console.error("No response received:", error.request);
+                } else {
+                    console.error("Error:", error.message);
+                }
+            });
+    };
 
     return (
         <Card title="Register">
@@ -84,19 +157,20 @@ const RegisterForm = () => {
                 <div className={"gender-form"}>
                     <b>Gender</b>
                     <div className={"gender-form-inside"}>
-                        <RadioButton inputId="male" name="gender" value="Male" onChange={(e) => setGender(e.value)} checked={gender === 'Male'} />
-                        <label htmlFor="male">Male</label>
+                        <RadioButton inputId="MALE" name="gender" value="MALE" onChange={(e) => setGender(e.value)}
+                                     checked={gender === 'MALE'}/>
+                        <label htmlFor="MALE">Male</label>
                     </div>
 
                     <div className={"gender-form-inside"}>
-                        <RadioButton inputId="female" name="gender" value="Female" onChange={(e) => setGender(e.value)} checked={gender === 'Female'} />
-                        <label htmlFor="female">Female</label>
+                        <RadioButton inputId="FEMALE" name="gender" value="FEMALE" onChange={(e) => setGender(e.value)}
+                                     checked={gender === 'FEMALE'}/>
+                        <label htmlFor="FEMALE">Female</label>
                     </div>
                 </div>
 
-
-
                 <Button label="Submit"
+                        onClick={(e) => handleSubmit(e)}
                 />
             </div>
         </Card>
