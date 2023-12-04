@@ -15,6 +15,8 @@ import Main from "./components/main/Main";
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AllLostItemsList from "./components/lostItems/AllLostItemsList";
+import AllFoundItemsList from "./components/foundItems/AllFoundItemsList";
 
 function App() {
     return (
@@ -29,6 +31,9 @@ function App() {
                         <Route path="index" element={<Main />}/>
                         <Route path="info" element={<SuccessMessage/>}/>
                         <Route path="logout" element={<Logout/>}/>
+
+                        <Route path="lost-items" element={<AllLostItemsList />}/>
+                        <Route path="found-items" element={<AllFoundItemsList />}/>
                     </Route>
                 </Route>
             </Routes>

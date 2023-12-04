@@ -40,6 +40,20 @@ const NavigationBar = () => {
             visible:check
         },
         {
+            label: 'Found Items',
+            command: () => {
+                navigate('/main/found-items')
+            },
+            visible:check
+        },
+        {
+            label: 'Lost Items',
+            command: () => {
+                navigate('/main/lost-items')
+            },
+            visible:check
+        },
+        {
             label: 'Logout',
             command: () => {
                 navigate('/main/logout')
