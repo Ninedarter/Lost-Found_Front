@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import {Card} from 'primereact/card';
 import {InputText} from "primereact/inputtext";
@@ -7,25 +7,72 @@ import { InputLabel } from '@mui/material'
 
 import "./FoundItemAddForm.css";
 import {Calendar} from "primereact/calendar";
-import {RadioButton} from "primereact/radiobutton";
 
 import axiosInstance from "../../api/customAxios";
 import {show} from "../../App";
 import {toast} from "react-toastify";
+import {useNavigate} from "react-router-dom";
+import {useAuth} from "../../provider/authProvider";
+
 import MapWithMarker from '../map/MapWithMarker';
 
-const FoundItemAddForm = () => { 
+const FoundItemAddForm = ({selected}) => { 
+  const {setRefreshToken} = useAuth();
+  const navigate = useNavigate();
+
 const [title, setTitle] = useState("")
 const [category, setCategory] = useState("")
 const [dateFound, setDateFound] = useState()
 const [description, setDescription] = useState("")
-const [selected, setSelected] = useState("");
+const [latitude, setLatitude] = useState("")
+const [longitude, setLongitude] = useState("")
 
-  const handleChange = (event) => {
-    setSelected(event.target.value);
-  };
+const handleChange = (event) => {
+  setCategory(event.target.value);
+};
 
-  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if(title.length<4) {
+      toast.warning("Title too short. Min 4")
+      return
+      }
+
+      // if(!category) {
+      //   toast.warning("Please select category")
+      //   return
+      // }
+
+      if(!dateFound) {
+        toast.warning("Please select date Found")
+        return
+      }     
+}
+
+  //   axiosInstance.post("/api/v1/foundItem/add", {
+  //     "category": category,
+  //       "title": title,
+  //       "dateFound": dateFound,
+  //       "description": description,
+  //       "latitude": latitude,
+  //       "longitude": longitude, 
+  //       "email": "simona@gmail.com"
+  // })
+  //     .then((response) => {
+       
+  // })
+  //     .catch(error => {
+  //         toast.error("Something went wrong.");
+  //         if (error.response) {
+  //             console.error("Error status:", error.response.status);
+  //             console.error("Error data:", error.response.data);
+  //         } else if (error.request) {
+  //             console.error("No response received:", error.request);
+  //         } else {
+  //             console.error("Error:", error.message);
+  //         }
+  //  });
 
 return (
     <Card title="Add Found item">
@@ -37,29 +84,26 @@ return (
                            onChange={(e) => setTitle(e.target.value)}
                            style={{width: "100%"}}
                 />
-                <label htmlFor="name">Title</label>
+                <label htmlFor="title">Title</label>
             </span>
 
             <span className="p-float-label">
                 <InputText id="title"
-                           value={title}
+                           value={description}
                            onChange={(e) => setDescription(e.target.value)}
                            style={{width: "100%", height: "100px"}}
                 />
-                <label htmlFor="name">Description</label>
+                <label htmlFor="description">Description</label>
             </span>
 
-
-          <InputLabel
-          style={{color: "white"}}>
-            Select Category</InputLabel>
-          <Select className="p-float-label"
-            value={selected}
-            onChange={handleChange}
-          >
-            {category}
-          </Select>
-
+            <span className="p-float-label">
+                <InputText id="category"
+                           value={category}
+                           onChange={(e) => setCategory(e.target.value)}
+                           style={{width: "100%"}}
+                />
+                <label htmlFor="category">Category</label>
+            </span>
 
             <Calendar value={dateFound}
                           onChange={(e) => setDateFound(e.value)}
@@ -70,15 +114,21 @@ return (
           style={{color: "white"}}>
             Where did you found item? Double click in a map: </InputLabel>
             <MapWithMarker/>
-
-
+           
 
             <Button label="Submit"
+            onClick={(e) => handleSubmit(e)}
             />
+           
         </div>
+        
+        
+        
     </Card>
-)
+    
+) 
 }
+
 
 
 export default FoundItemAddForm

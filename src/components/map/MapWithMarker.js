@@ -42,7 +42,6 @@ export default function MapWithMarker() {
       {
         lat: e.latLng.lat(),
         lng: e.latLng.lng(),
-        time: new Date(),
       },
     ]);
     console.log(selected);

@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d4753eb-9cd9-486b-bd15-221621c94554" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/customAxios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/customAxios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/login/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/register/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register/RegisterForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/successMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/successMessage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/provider/authProvider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/provider/authProvider.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/foundItems/AllFoundItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/foundItems/AllFoundItems.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/foundItems/AllFoundItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/foundItems/AllFoundItems.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemAddForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/foundItems/FoundItemAddForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map/MapWithMarker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/MapWithMarker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +42,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/motie/Desktop/LostAndFound/Lost-Found_Front&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Eridas/Desktop/Lost-Found_Front&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -74,6 +75,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
