@@ -68,7 +68,7 @@ const NavigationBar = () => {
         <img src={"/icona.png"} alt={":("} width={"30px"} />
     </Link>
 
-    return <Menubar start={start} model={items} style={{height:"40px"}}/>
+    return <Menubar start={start} model={items} style={{fontFamily:"Bentham", backgroundColor:"#9BC3BA",height:"60px", color:"white", display: "flex", justifyContent: "space-around"}}/>
 };
 
 export default NavigationBar;

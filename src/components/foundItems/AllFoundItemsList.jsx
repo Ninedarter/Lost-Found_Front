@@ -4,7 +4,7 @@ import {Column} from "primereact/column";
 import {DataTable} from "primereact/datatable";
 import {Card} from "primereact/card";
 
-const AllLostItemsList = () => {
+const AllFoundItemsList = () => {
 
     const [foundItems, setFoundItems] = useState([]);
 
@@ -28,4 +28,4 @@ const AllLostItemsList = () => {
     );
 };
 
-export default AllLostItemsList;
+export default AllFoundItemsList;
