@@ -9,7 +9,7 @@ const AllFoundItems = () => {
   const [foundItemsData, setFoundItemsData] = useState([]);
 
   useEffect(() => {
-    axiosInstance.get("/api/v1/foundItem/getAll")
+    axiosInstance.get("/api/v1/foundItem/all")
     .then((response) => {
        setFoundItemsData(response.data)
     })
