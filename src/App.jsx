@@ -38,7 +38,6 @@ function App() {
                         <Route path="index" element={<Main />}/>
                         <Route path="info" element={<SuccessMessage/>}/>
                         <Route path="logout" element={<Logout/>}/>
-
                         <Route path="lost-items" element={<AllLostItems/>}/>
                         <Route path="found-items" element={<FoundItemsCard />}/>
                         <Route path="add-item" element={<FoundItemAddForm />}/>

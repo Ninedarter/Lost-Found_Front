@@ -3,6 +3,7 @@ body {
     padding: 0 !important;
     background-color: #B2D2CA;
     height: 100vh;
+    width: 100vw;
 }
 
 .p-menuitem-text {

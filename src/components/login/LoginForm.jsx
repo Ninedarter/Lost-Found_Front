@@ -79,11 +79,12 @@ const LoginForm = () => {
             </span>
             
             <div>
-            <img src='https://www.beverlyhillsplazahotel.com/gallery-images/properties/5/6/8/1540966732_lostandfound1_2.jpg' style={{height:"310px", borderRadius:"7px"}}></img>
+            <img src='https://th.bing.com/th/id/R.8ddf4c8f5b3dfb30ff3edfb4ca6358a3?rik=e%2f6aTxrfLPzEyA&riu=http%3a%2f%2fwww.yourzbs.com%2fwp-content%2fuploads%2f2019%2f06%2fThe-Emotional-Side-Of-Returning-Lost-Objects.jpg&ehk=UrjhuURD%2f3HZ%2bBoNc4uEkhuA6bEn3KJ7YWvo2FTBLJg%3d&risl=&pid=ImgRaw&r=0' style={{height:"310px", borderRadius:"7px"}}></img>
             </div>
             <span>
                 <Button label="Submit"
                         onClick={(e) => handleSubmit(e)}
+                        style={{width:"100%"}}
                 />
                 </span>
             </div>
