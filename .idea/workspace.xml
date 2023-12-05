@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d4753eb-9cd9-486b-bd15-221621c94554" name="Changes" comment="Wrong endpoint name">
-      <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PageDoesntExist.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ProtectedAdminRoute.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/panel/AdminMainPanel.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/panel/foundItems/FoundItemsAdmin.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/panel/lostItems/LostItemsAdmin.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/user/UserInfoWindow.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/logout/Logout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logout/Logout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navbar/NavigationBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/NavigationBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/provider/authProvider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/provider/authProvider.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

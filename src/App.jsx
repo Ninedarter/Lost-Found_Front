@@ -20,6 +20,10 @@ import AllFoundItemsList from "./components/foundItems/AllFoundItemsList";
 import FoundItemsCard from './components/foundItems/FoundItemsCard';
 import FoundItemAddForm from './components/foundItems/FoundItemAddForm';
 import AllLostItems from './components/lostItems/AllLostItems';
+import {ProtectedAdminRoute} from "./ProtectedAdminRoute";
+import AdminMainPanel from "./components/admin/panel/AdminMainPanel";
+import FoundItemsAdmin from "./components/admin/panel/foundItems/FoundItemsAdmin";
+import LostItemsAdmin from "./components/admin/panel/lostItems/LostItemsAdmin";
 
 function App() {
     return (
@@ -38,6 +42,13 @@ function App() {
                         <Route path="lost-items" element={<AllLostItems/>}/>
                         <Route path="found-items" element={<FoundItemsCard />}/>
                         <Route path="add-item" element={<FoundItemAddForm />}/>
+
+                        <Route path={"admin"} element={<ProtectedAdminRoute/>}>
+                            <Route path={"panel"} element={<AdminMainPanel />} />
+
+                            <Route path={"found-items"} element={<FoundItemsAdmin />} />
+                            <Route path={"lost-items"} element={<LostItemsAdmin />} />
+                        </Route>
                     </Route>
                 </Route>
             </Routes>
