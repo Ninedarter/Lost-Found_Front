@@ -1,76 +1,46 @@
-import React, { useState, useEffect } from 'react'
-import { Card, Container } from 'react-bootstrap'
-import styles from './AllLostItems.css'
-import MapContainer from '../map/MapContainer'
+import React, {useEffect, useState} from 'react';
+import axiosInstance from "../../api/customAxios";
+import {Card, Container} from "primereact/card";
+
 
 const AllLostItems = () => {
-    // const [lostItemsData, setLostItemsData] = useState([]);
-  
-    // const getdata = () => {
-    //   lostItemService.getAllLostItemsData().then((response) => {
-    //     console.log(response);
-    //     setLostItemsData(response.data);
-    //   })
-    // }
-  
-    // useEffect(() => {
-    //   getdata()
-    // }, [])
-  
-    // console.log(lostItemsData)
-  
-    return (
-        <div className='lostItemsBody'>
-            <h1>Lost Items</h1>
-      <div className="lostItemsCard">
-        <Container 
-        className="lostItemContainer" 
-        // getdata={getdata}
-        >
-          {/* {lostItemsData.map((item, index) => ( */}
-            <Card 
-            // key={index} 
-            style={{ width: '18rem' }}
-            >
-              <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.cWDmxfCwrk4WTmNqihtrggHaDN?rs=1&pid=ImgDetMain" />
-              <Card.Body>
-                <Card.Title>Title:
-                    {/* {item.title} */}
-                    </Card.Title>
-                <Card.Text>Description: 
-                    {/* {item.description} */}
-                    </Card.Text>
-                <Card.Text>Type: 
-                    {/* {item.type} */}
-                    </Card.Text>
-                <Card.Text>Date lost: 
-                    {/* {item.dateLost} */}
-                    </Card.Text>
-                <Card.Header>Reward: 
-                    {/* {item.reward} */}
-                    </Card.Header>
-              </Card.Body>
-            </Card>
-          {/* ))} */}
-          <div className='callButtons'>
-          <button className="callbtn" type="submit">
-              Call Loser
-            </button>
-            <button className="callbtn" type="submit">
-              Message Loser
-            </button>
-            </div>
-            
-            <div className='mapcontainer'>
-        <MapContainer/>
-        </div>
-        </Container>
-        
-        
-      </div>
-      </div>
-    )
 
-}
+    const [lostItems, setLostItems] = useState([]);
+
+    useEffect(() => {
+        axiosInstance.get("/api/v1/lostItem/all")
+            .then((response) => {
+                setLostItems(response.data)
+            })
+
+    }, []);
+
+  return (
+
+    <div className="getAllcontainer">
+          {lostItems.map((item, index) => (
+<Card
+key={index} >
+    <div className="wrapper">
+    <div className="product-img">
+      <img src="http://bit.ly/2tMBBTd" height="420" width="327"/>
+    </div>
+    <div className="product-info">
+      <div className="product-text">
+        <h1>{item.title}</h1>
+        <h2>Category: {item.category}</h2>
+        <h2>Date Lost: {item.dateFound}</h2>
+        <p>{item.description}</p></div>
+      <div class="product-price-btn">
+        <p><span>REWARD: {item.reward} €</span></p>
+        <button type="button">Send message</button>
+      </div>
+    </div>
+  </div>
+  </Card>
+          ))};
+          </div>
+  );
+};
 
 export default AllLostItems

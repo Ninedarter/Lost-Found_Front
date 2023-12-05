@@ -1,7 +1,13 @@
 .foundItemAdd-form-main {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap:25px;
+    background-color: #B2CEC0;
+    font-size: 15px;
+    padding: 20px;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   }
   
   .gender-form {
@@ -13,3 +19,42 @@
     display: flex;
     gap:3px;
   }
+
+  .p-card {
+    width: 100vw;
+    height: 100vh;
+    background-color: #B2CEC0;
+    border-radius: 7px;
+  }
+
+  label {
+    font-size: 20px;
+  }
+  .p-inputtext {
+    background-color: #88BBAC;
+    margin: 0;
+    font-size: 20px;
+}
+.p-card-body {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+}
+.p-card-content {
+  background-color: #ADCEC5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+Button {
+  background-color: #88BBAC;
+  border-color: grey;
+  color: white;
+  font-size: 20px;
+  font-family: 'Bentham', serif;
+}
+
+h1 {
+  font-family: 'Bentham', serif;
+}

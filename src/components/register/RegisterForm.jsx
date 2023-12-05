@@ -94,7 +94,7 @@ const RegisterForm = () => {
 
     return (
         <Card title="Register">
-            <div className={"login-form-main"}>
+            <div className={"register-form-main"}>
                 <span className="p-float-label">
                     <InputText id="name"
                                value={name}

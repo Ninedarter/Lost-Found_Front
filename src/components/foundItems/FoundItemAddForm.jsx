@@ -75,7 +75,8 @@ const handleChange = (event) => {
   //  });
 
 return (
-    <Card title="Add Found item">
+    <Card> 
+      <h1>Add Found Item</h1>
         <div className={"foundItemAdd-form-main"}>
         
             <span className="p-float-label">
@@ -108,6 +109,7 @@ return (
             <Calendar value={dateFound}
                           onChange={(e) => setDateFound(e.value)}
                           placeholder={"Date Found"}
+                          style={{width: "100%"}}
                 />
             
             <InputLabel

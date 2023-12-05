@@ -3,12 +3,12 @@ import axiosInstance from "../../api/customAxios";
 import {Column} from "primereact/column";
 import {DataTable} from "primereact/datatable";
 import {Card, Container} from "primereact/card";
-import styles from './oundItemsCard.css'
+import styles from './FoundItemsCard.css'
 import FilteredList from '../FilteredList';
 
 
 
-const NewFoundItemsCard = () => {
+const FoundItemsCard = () => {
 
     const [foundItems, setFoundItems] = useState([]);
 
@@ -48,4 +48,4 @@ key={index} >
   );
 };
 
-export default NewFoundItemsCard
+export default FoundItemsCard
