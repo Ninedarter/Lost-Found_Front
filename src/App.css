@@ -1,6 +1,10 @@
 .main-window {
-
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-top: 20px;
+    height: 100vh;
 }
 
 @media only screen and (max-width: 600px) {

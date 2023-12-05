@@ -66,7 +66,16 @@ const NavigationBar = () => {
                 navigate('/main/logout')
             },
             visible:check
+        },
+        {
+            button: 'Logout',
+            command: () => {
+                navigate('/main/logout')
+            },
+            visible:check
+            
         }
+        
     ];
 
     const where = check?"/main/index":"/"
@@ -75,7 +84,7 @@ const NavigationBar = () => {
         <img src={"/icona.png"} alt={":("} width={"30px"} />
     </Link>
 
-    return <Menubar start={start} model={items} style={{backgroundColor:"#9DC5BD",height:"50px", color:"white", display: "flex", justifyContent: "space-between"}}/>
+    return <Menubar start={start} model={items} style={{display:"flex", justifyContent:"space-between"}}/>
 };
 
 export default NavigationBar;

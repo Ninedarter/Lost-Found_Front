@@ -75,8 +75,7 @@ const handleChange = (event) => {
   //  });
 
 return (
-    <Card> 
-      <h1>Add Found Item</h1>
+    <Card className="addingcard"> 
         <div className={"foundItemAdd-form-main"}>
         
             <span className="p-float-label">
@@ -113,7 +112,7 @@ return (
                 />
             
             <InputLabel
-          style={{color: "white"}}>
+          style={{color: "black"}}>
             Where did you found item? Double click in a map: </InputLabel>
             <MapWithMarker/>
            

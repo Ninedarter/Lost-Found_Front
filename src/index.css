@@ -1,6 +1,19 @@
 body {
     margin: 0 !important;
     padding: 0 !important;
-    background-color: white;
-    background-size: cover;
+    background-color: #B2D2CA;
+    height: 100vh;
+}
+
+.p-menuitem-text {
+    font-size: 25px;
+
+}
+
+.p-button {
+    background-color: #A1C9C0;
+    border: white;
+    font-size: 10px;
+    height: 45px;
+
 }

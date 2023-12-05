@@ -77,11 +77,15 @@ const LoginForm = () => {
                 />
                 <label htmlFor="password">Password</label>
             </span>
-
-
+            
+            <div>
+            <img src='https://www.beverlyhillsplazahotel.com/gallery-images/properties/5/6/8/1540966732_lostandfound1_2.jpg' style={{height:"310px", borderRadius:"7px"}}></img>
+            </div>
+            <span>
                 <Button label="Submit"
                         onClick={(e) => handleSubmit(e)}
                 />
+                </span>
             </div>
         </Card>
     )

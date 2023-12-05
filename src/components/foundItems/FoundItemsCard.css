@@ -6,12 +6,8 @@
     height: 100vh;
     display: flex;
     flex-wrap:wrap;
-}
-    
-  .p-card {
-    background-color: #FDF1EC !important;
-  }
-  
+}    
+
   .wrapper {
     height: 380px;
     width: 654px;
@@ -125,3 +121,9 @@
   .product-price-btn button:hover {
     background-color: #79b0a1;
   }
+
+  .p-card {
+        background-color: #B2D2CA;
+        padding: 15px;
+  }
+

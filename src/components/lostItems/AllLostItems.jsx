@@ -38,7 +38,7 @@ key={index} >
     </div>
   </div>
   </Card>
-          ))};
+          ))}
           </div>
   );
 };

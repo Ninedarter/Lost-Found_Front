@@ -21,7 +21,6 @@ const FoundItemsCard = () => {
     }, []);
 
   return (
-
     <div className="getAllcontainer">
           {foundItems.map((item, index) => (
 <Card
