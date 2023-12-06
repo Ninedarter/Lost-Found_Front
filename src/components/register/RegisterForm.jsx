@@ -112,8 +112,10 @@ const RegisterForm = () => {
             "gender": gender
         })
             .then(response => {
-                setToken(response.data.access_token)
-                setRefreshToken(response.data.refresh_token)
+                if(response.data.access_token && response.data.refresh_token) {
+                    setToken(response.data.access_token)
+                    setRefreshToken(response.data.refresh_token)
+                }
                 toast.success("Registration successful!")
                 navigate("/main/index")
             })

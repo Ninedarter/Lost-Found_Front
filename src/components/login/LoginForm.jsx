@@ -53,8 +53,10 @@ const LoginForm = () => {
             "password": password
         })
             .then(response => {
-                setToken(response.data.access_token)
-                setRefreshToken(response.data.refresh_token)
+                if(response.data.access_token && response.data.refresh_token) {
+                    setToken(response.data.access_token)
+                    setRefreshToken(response.data.refresh_token)
+                }
                 navigate("/main/index")
             })
             .catch(error => {

@@ -7,8 +7,9 @@ import {jwtDecode} from "jwt-decode";
 const NavigationBar = () => {
     const navigate = useNavigate();
     const {token} = useAuth()
-    const check = !!token
-    const adminPermission = token?jwtDecode(token, {header:false}).roles.includes("ROLE_ADMIN"):false
+    const check = !!token && token !== "undefined"
+
+    const adminPermission = token && token !== "undefined"? jwtDecode(token, {header: false}).roles.includes("ROLE_ADMIN") : false
 
     const items = [
         {
@@ -17,7 +18,7 @@ const NavigationBar = () => {
             command: () => {
                 navigate('/login')
             },
-            visible:!check
+            visible: !check
 
         },
         {
@@ -25,75 +26,75 @@ const NavigationBar = () => {
             command: () => {
                 navigate('/register')
             },
-            visible:!check
+            visible: !check
         },
         {
             label: 'Admin Panel',
             command: () => {
                 navigate('/main/admin/panel')
             },
-            visible:check && adminPermission
+            visible: check && adminPermission
         },
         {
             label: 'Main',
             command: () => {
                 navigate('/main/index')
             },
-            visible:check
+            visible: check
         },
         {
             label: 'Info',
             command: () => {
                 navigate('/main/info')
             },
-            visible:check
+            visible: check
         },
         {
             label: 'Found Items',
             command: () => {
                 navigate('/main/found-items')
             },
-            visible:check
+            visible: check
         },
         {
             label: 'Lost Items',
             command: () => {
                 navigate('/main/lost-items')
             },
-            visible:check
+            visible: check
         },
         {
             label: 'Add Item',
             command: () => {
                 navigate('/main/add-item')
             },
-            visible:check
+            visible: check
         },
         {
             label: 'Logout',
             command: () => {
                 navigate('/main/logout')
             },
-            visible:check
+            visible: check
         },
         {
             button: 'Logout',
             command: () => {
                 navigate('/main/logout')
             },
-            visible:check
-            
+            visible: check
+
         }
-        
+
     ];
 
-    const where = check?"/main/index":"/"
+    const where = check ? "/main/index" : "/"
 
-    const start = <Link to={where} style={{margin:"5px"}}>
-        <img src={"/icona.png"} alt={":("} width={"67px"} />
+    const start = <Link to={where} style={{margin: "5px"}}>
+        <img src={"/icona.png"} alt={":("} width={"67px"}/>
     </Link>
 
-    return <Menubar start={start} model={items} style={{display:"flex", justifyContent:"space-between"}}/>
+    return <Menubar start={start} model={items} style={{display: "flex", justifyContent: "space-between"}}/>
 };
 
 export default NavigationBar;
