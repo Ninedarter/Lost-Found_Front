@@ -11,9 +11,9 @@ import UserInfoWindow from "../../../user/UserInfoWindow";
 
 const FoundItemsAdmin = () => {
     const [foundItems, setFoundItems] = useState([]);
+    const buttonEl = useRef(null);
     const [visible, setVisible] = useState(false);
     const [userDialog, setUserDialog] = useState(false)
-    const buttonEl = useRef(null);
 
 
     const getData = () => {
@@ -30,8 +30,11 @@ const FoundItemsAdmin = () => {
 
     const userCheckButton = (row) => {
         return <>
-            <Dialog header={row.user.email + " Information"} visible={userDialog} style={{ width: '50vw' }} onHide={() => setUserDialog(false)}>
-               <UserInfoWindow userId={row.user.id} />
+            <Dialog header={row.user.email + " Information"}
+                    visible={userDialog}
+                    style={{width: '50vw'}}
+                    onHide={() => setUserDialog(false)}>
+                <UserInfoWindow userId={row.user.id}/>
             </Dialog>
             <Button onClick={() => setUserDialog(true)}
                     severity="info"
@@ -41,6 +44,8 @@ const FoundItemsAdmin = () => {
     }
 
     const removeItem = (row) => {
+
+
         const acceptedToRemoveItem = () => {
             axiosInstance.delete("/api/v1/admin/foundItem/delete/" + row.id)
                 .then((response) => {

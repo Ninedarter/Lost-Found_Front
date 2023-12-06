@@ -13,6 +13,7 @@ import {useAuth} from "../../provider/authProvider";
 import {useNavigate} from "react-router-dom";
 
 const RegisterForm = () => {
+    const [submitted, setSubmitted] = useState(false)
     const {setToken, setRefreshToken} = useAuth();
     const navigate = useNavigate();
 
@@ -28,42 +29,78 @@ const RegisterForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        setSubmitted(true)
+
         if(name.length<4) {
             toast.warning("First name too short. Min 4")
+            setSubmitted(false)
             return
         }
         if(lastName.length<4) {
             toast.warning("Last name too short. Min 4")
+            setSubmitted(false)
             return
         }
         if(email.length<4) {
             toast.warning("Email too short. Min 4")
+            setSubmitted(false)
             return
         }
         if(password.length<4) {
             toast.warning("Password too short. Min 4")
+            setSubmitted(false)
             return
         }
         if(!!!dob) {
             toast.warning("Please choose date of birth")
+            setSubmitted(false)
             return
         }
 
         if(number.length<6) {
             toast.warning("Number too short. Min 6")
+            setSubmitted(false)
             return
         }
 
         if(!gender) {
             toast.warning("Please select your gender")
+            setSubmitted(false)
             return
         }
 
         if(password !== password2) {
             toast.warning("Passwords do not match")
+            setSubmitted(false)
             return
         }
 
+        if(name.length>32) {
+            toast.warning("First name too long. Max 32")
+            setSubmitted(false)
+            return
+        }
+        if(lastName.length>32) {
+            toast.warning("Last name too long. Max 32")
+            setSubmitted(false)
+            return
+        }
+        if(email.length>32) {
+            toast.warning("Email too long. Max 32")
+            setSubmitted(false)
+            return
+        }
+        if(password.length>32) {
+            toast.warning("Password too long. Max 32")
+            setSubmitted(false)
+            return
+        }
+
+        if(number.length>32) {
+            toast.warning("Number too long. Max 32")
+            setSubmitted(false)
+            return
+        }
 
         axiosInstance.post("/api/v1/auth/register", {
             "firstname": name,
@@ -77,9 +114,11 @@ const RegisterForm = () => {
             .then(response => {
                 setToken(response.data.access_token)
                 setRefreshToken(response.data.refresh_token)
+                toast.success("Registration successful!")
                 navigate("/main/index")
             })
             .catch(error => {
+                setSubmitted(false)
                 toast.error("Something went wrong. Maybe email is already taken?");
                 if (error.response) {
                     console.error("Error status:", error.response.status);
@@ -171,6 +210,7 @@ const RegisterForm = () => {
 
                 <Button label="Submit"
                         onClick={(e) => handleSubmit(e)}
+                        disabled={submitted}
                 />
             </div>
         </Card>

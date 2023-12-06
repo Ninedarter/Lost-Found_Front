@@ -11,6 +11,7 @@ import {useNavigate} from "react-router-dom";
 import {toast} from "react-toastify";
 
 const LoginForm = () => {
+    const [submitted, setSubmitted] = useState(false)
     const {setToken, setRefreshToken} = useAuth();
     const navigate = useNavigate();
 
@@ -20,13 +21,29 @@ const LoginForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        setSubmitted(true)
+
         if(email.length<4) {
             toast.warning("Email too short. Min. 4")
+            setSubmitted(false)
             return
         }
 
         if(password.length<4) {
             toast.warning("Password too short. Min. 4")
+            setSubmitted(false)
+            return
+        }
+
+        if(email.length>32) {
+            toast.warning("Email too long. Max. 32")
+            setSubmitted(false)
+            return
+        }
+
+        if(password.length>32) {
+            toast.warning("Password too long. Max. 32")
+            setSubmitted(false)
             return
         }
 
@@ -42,6 +59,7 @@ const LoginForm = () => {
             })
             .catch(error => {
                 toast.error("Wrong email or password!");
+                setSubmitted(false)
                 if (error.response) {
                     console.error("Error status:", error.response.status);
                     console.error("Error data:", error.response.data);
@@ -85,6 +103,7 @@ const LoginForm = () => {
                 <Button label="Submit"
                         onClick={(e) => handleSubmit(e)}
                         style={{width:"100%"}}
+                        disabled={submitted}
                 />
                 </span>
             </div>
