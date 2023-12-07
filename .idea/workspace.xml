@@ -5,19 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d4753eb-9cd9-486b-bd15-221621c94554" name="Changes" comment="Fixed possible token error.">
-      <change afterPath="$PROJECT_DIR$/src/components/report/ReportUser.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/user/InfoWindow/UserInfoWindow.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/user/changePassword/ChangePassword.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/user/panel/UserPanel.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/banned/UserBannedWindow.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/items/ItemTypeSelectWindow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/items/ItemTypeSelectWindow.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemAddForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemAddForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/items/lostItems/LostItemAddForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/items/lostItems/LostItemAddForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/panel/AdminMainPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/panel/AdminMainPanel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/panel/foundItems/FoundItemsAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/panel/foundItems/FoundItemsAdmin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/panel/lostItems/LostItemsAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/panel/lostItems/LostItemsAdmin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavigationBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/NavigationBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/successMessage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/UserInfoWindow.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProtectedRoute.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProtectedRoute.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/foundItems/AllFoundItemsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/foundItems/AllFoundItemsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemAddForm.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemAddForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemsCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemsCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lostItems/AllLostItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/lostItems/AllLostItems.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lostItems/AllLostItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/lostItems/AllLostItems.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lostItems/AllLostItemsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/lostItems/AllLostItemsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lostItems/LostItemAddForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map/MapWithMarker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/MapWithMarker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +32,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -41,33 +53,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Eridas/Desktop/Lost-Found_front&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "report",
+    "last_opened_file_path": "C:/Users/Eridas/Desktop/Lost-Found_front",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\foundItems" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\items" />
       <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\user\InfoWindow" />
       <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src" />
       <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\map" />
       <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\foundItems" />
-      <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\lostItems" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

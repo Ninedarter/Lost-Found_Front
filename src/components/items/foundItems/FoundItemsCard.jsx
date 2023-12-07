@@ -1,11 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react';
-import axiosInstance from "../../api/customAxios";
+import axiosInstance from "../../../api/customAxios";
 import {Card} from 'react-bootstrap';
 import styles from './FoundItemsCard.css';
 import {ConfirmPopup} from "primereact/confirmpopup";
 import {toast} from "react-toastify";
 import {Dialog} from "primereact/dialog";
-import UserInfoWindow from '../user/InfoWindow/UserInfoWindow';
+import UserInfoWindow from '../../user/InfoWindow/UserInfoWindow';
 import {Button} from 'primereact/button';
 
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import {
   GoogleMap,
@@ -28,13 +28,19 @@ const center = {
   lng: 23.881275,
 };
 
-export default function MapWithMarker() {
+export default function MapWithMarker({coordinates}) {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey:  "AIzaSyB2tAu2LgRqzArvz3qJ-kup_XEI4aZXvug",
     libraries,
   });
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
+
+  useEffect(() => {
+    if(selected != null) {
+      coordinates(selected)
+    }
+  }, [selected]);
 
   const onMapClick = React.useCallback((e) => {
     setMarkers((current) => [
@@ -44,7 +50,6 @@ export default function MapWithMarker() {
         lng: e.latLng.lng(),
       },
     ]);
-    console.log(selected);
   }, []);
 
   const mapRef = React.useRef();
@@ -56,7 +61,9 @@ export default function MapWithMarker() {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(14);
   }, []);
-console.log(selected);
+
+
+
   if (loadError) return "Error";
   if (!isLoaded) return "Loading...";
 
@@ -161,7 +168,7 @@ function Search({ panTo }) {
       const { lat, lng } = await getLatLng(results[0]);
       panTo({ lat, lng });
     } catch (error) {
-      console.log("😱 Error: ", error);
+      console.error("😱 Error: ", error);
     }
   };
 
