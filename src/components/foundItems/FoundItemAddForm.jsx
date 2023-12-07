@@ -4,75 +4,68 @@ import {Card} from 'primereact/card';
 import {InputText} from "primereact/inputtext";
 import {Button} from "primereact/button";
 import { InputLabel } from '@mui/material'
-
 import "./FoundItemAddForm.css";
 import {Calendar} from "primereact/calendar";
-
 import axiosInstance from "../../api/customAxios";
-import {show} from "../../App";
 import {toast} from "react-toastify";
-import {useNavigate} from "react-router-dom";
-import {useAuth} from "../../provider/authProvider";
-
 import MapWithMarker from '../map/MapWithMarker';
 
-const FoundItemAddForm = ({selected}) => { 
-  const {setRefreshToken} = useAuth();
-  const navigate = useNavigate();
+const FoundItemAddForm = () => {
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  const [categories, setCategories] = useState([]);
+  const [dateFound, setDateFound] = useState('');
+  const [description, setDescription] = useState('');
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
+  const [foundItem, setFoundItem] = useState([]);
 
-const [title, setTitle] = useState("")
-const [category, setCategory] = useState("")
-const [dateFound, setDateFound] = useState()
-const [description, setDescription] = useState("")
-const [latitude, setLatitude] = useState("")
-const [longitude, setLongitude] = useState("")
+  const handleSubmit = (e) => {
+     e.preventDefault();
+     addPosts(title, category, dateFound, description, latitude, longitude);
+  };
 
-const handleChange = (event) => {
-  setCategory(event.target.value);
-};
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if(title.length<4) {
-      toast.warning("Title too short. Min 4")
-      return
-      }
-
-      // if(!category) {
-      //   toast.warning("Please select category")
-      //   return
-      // }
-
-      if(!dateFound) {
-        toast.warning("Please select date Found")
-        return
-      }     
+    const getData = () => {
+    axiosInstance.get("/api/v1/categories/all")
+        .then((response) => {
+            setCategories(response.data)
+            console.log(response.data)
+        })
 }
 
-  //   axiosInstance.post("/api/v1/foundItem/add", {
-  //     "category": category,
-  //       "title": title,
-  //       "dateFound": dateFound,
-  //       "description": description,
-  //       "latitude": latitude,
-  //       "longitude": longitude, 
-  //       "email": "simona@gmail.com"
-  // })
-  //     .then((response) => {
-       
-  // })
-  //     .catch(error => {
-  //         toast.error("Something went wrong.");
-  //         if (error.response) {
-  //             console.error("Error status:", error.response.status);
-  //             console.error("Error data:", error.response.data);
-  //         } else if (error.request) {
-  //             console.error("No response received:", error.request);
-  //         } else {
-  //             console.error("Error:", error.message);
-  //         }
-  //  });
+useEffect(() => {
+    getData()
+}, []);
+
+
+  const upadateSelectCategory = e => {         
+    setCategory(e.target.value);
+  };
+
+
+  const addPosts = (title, category, dateFound, description, latitude, longitude) => {
+    axiosInstance.post('/api/v1/foundItem/add', {
+           title: title,
+           category: category,
+           dateFound: dateFound.toISOString().substring(0,10),
+           description: description,
+           latitude: latitude,
+           longitude: longitude,
+        })
+        .then((response) => {
+           setFoundItem([response.data, ...foundItem]);
+        });
+          setTitle('');
+          setCategory('');
+          setDateFound('');
+          setDescription('');
+          setLatitude('');
+          setLongitude('');
+        };
+
+
+console.log(title, category, description, dateFound, longitude, latitude);
+
 
 return (
     <Card className="addingcard"> 
@@ -97,39 +90,56 @@ return (
             </span>
 
             <span className="p-float-label">
+              <select onChange={upadateSelectCategory} value={category} style={{width: "100%"}}>
+              <option value="">-- Category --</option>
+              {categories.map((item, index) => (
+              <option key={item}>{item}</option>))}  
+              </select>
+            </span>
+
+            <span className="p-float-label">
                 <InputText id="category"
-                           value={category}
-                           onChange={(e) => setCategory(e.target.value)}
+                           value={latitude}
+                           onChange={(e) => setLatitude(e.target.value)}
                            style={{width: "100%"}}
                 />
-                <label htmlFor="category">Category</label>
+                <label htmlFor="category">Latitude</label>
+            </span>
+
+            <span className="p-float-label">
+                <InputText id="category"
+                           value={longitude}
+                           onChange={(e) => setLongitude(e.target.value)}
+                           style={{width: "100%"}}
+                />
+                <label htmlFor="category">Longitude</label>
             </span>
 
             <Calendar value={dateFound}
                           onChange={(e) => setDateFound(e.value)}
                           placeholder={"Date Found"}
                           style={{width: "100%"}}
+                          
                 />
             
             <InputLabel
           style={{color: "black"}}>
             Where did you found item? Double click in a map: </InputLabel>
-            <MapWithMarker/>
+
            
 
             <Button label="Submit"
             onClick={(e) => handleSubmit(e)}
-            />
+            
+            /> 
            
         </div>
         
-        
-        
     </Card>
-    
+  
 ) 
-}
 
+}
 
 
 export default FoundItemAddForm

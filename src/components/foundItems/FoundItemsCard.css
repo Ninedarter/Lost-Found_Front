@@ -133,7 +133,16 @@
   }
 
   .search-input {
-    width: 700px;
+    width: 30%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 7px;
+    float:right;
+    margin-right: 20px;
+  }
+
+  .custom-select {
+    width: 30%;
     height: 50px;
     font-size: 20px;
     border-radius: 7px;

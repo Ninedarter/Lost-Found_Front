@@ -1,40 +1,59 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import axiosInstance from "../../api/customAxios";
 import { Card } from 'react-bootstrap';
-import styles from './FoundItemsCard.css'
+import styles from './FoundItemsCard.css';
+import {ConfirmPopup} from "primereact/confirmpopup";
+import {toast} from "react-toastify";
+import {Dialog} from "primereact/dialog";
+import UserInfoWindow from '../user/UserInfoWindow';
+import { Button } from 'primereact/button';
 
 
 const FoundItemsCard = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-    const [foundItems, setFoundItems] = useState([]);
-    const [q, setQ] = useState("");
-    const [searchParam] = useState(["title", "category", "dateFound", "description"]);
+  const [foundItems, setFoundItems] = useState([]);
+  const [q, setQ] = useState("");
+  const [searchParam] = useState(["title", "category", "dateFound", "description"]);
+  const [filterParam, setFilterParam] = useState(["All"]);
 
     useEffect(() => {
         axiosInstance.get("/api/v1/foundItem/all")
             .then((response) => {
                 setIsLoaded(true);
                 setFoundItems(response.data)
+                console.log(response.data)
             },(error) => {
               setIsLoaded(true);
               setError(error);
           }
         );
     }, []);
+
   
     function search(items) {
     return items.filter((item) => {
-      return searchParam.some((newItem) => {
+      if (item.category == filterParam) {
+        return searchParam.some((newItem) => {
           return (
               item[newItem]
                   .toString()
                   .toLowerCase()
                   .indexOf(q.toLowerCase()) > -1
-          );
-      });
-  });
-}
+                );
+            });
+            } else if (filterParam == "All") {
+              return searchParam.some((newItem) => {
+                  return (
+                      item[newItem]
+                          .toString()
+                          .toLowerCase()
+                          .indexOf(q.toLowerCase()) > -1
+                          );  
+                        });
+                    }
+                });
+            }
 
     if (error) {
       return <>{error.message}</>;
@@ -54,10 +73,30 @@ const FoundItemsCard = () => {
                                 value={q}
                                 onChange={(e) => setQ(e.target.value)}
                             />
+                            
                             </label>
+                            <div className="select">
+                        <select
+                        onChange={(e) => {
+                          setFilterParam(e.target.value);
+                      }}
+                      className="custom-select"
+                      aria-label="Filter Items By Categories"
+                  >
+                      <option value="All">Filter By Category</option>
+                      <option value="CLOTHES">CLOTHES</option>
+                      <option value="WALLET">WALLET</option>
+                      <option value="PHONE">PHONE</option>
+                      <option value="JEWELRY">JEWELRY</option>
+                      <option value="GLASSES">GLASSES</option>
+                      <option value="KEYS">KEYS</option>
+                      <option value="OTHER">OTHER</option>
+                  </select>
+                  <span className="focus"></span>
                     </div>
-                    <div className="getAllcontainer">
+                </div>
 
+                    <div className="getAllcontainer">
 
           {search(foundItems).map((item, index) => (
 <Card
@@ -74,12 +113,14 @@ key={index} >
         <p>{item.description}</p></div>
       <div class="product-price-btn">
         <p><span>Yours?</span></p>
-        <button type="button">Send message</button>
+
+        <button>More Info </button>
+  
       </div>
     </div>
   </div>
   </Card>
-          ))};
+          ))}
           </div>
           </div>
   );
