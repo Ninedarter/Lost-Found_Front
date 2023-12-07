@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d4753eb-9cd9-486b-bd15-221621c94554" name="Changes" comment="Fixed possible token error.">
-      <change afterPath="$PROJECT_DIR$/src/components/banned/UserBannedWindow.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/items/ItemTypeSelectWindow.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/items/ItemTypeSelectWindow.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemAddForm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemAddForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/items/lostItems/LostItemAddForm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/items/lostItems/LostItemAddForm.jsx" afterDir="false" />
+    <list default="true" id="6d4753eb-9cd9-486b-bd15-221621c94554" name="Changes" comment="Safe keep">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProtectedRoute.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProtectedRoute.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/foundItems/AllFoundItemsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/foundItems/AllFoundItemsList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemAddForm.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemAddForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemsCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemsCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lostItems/AllLostItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/lostItems/AllLostItems.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lostItems/AllLostItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/lostItems/AllLostItems.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lostItems/AllLostItemsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/lostItems/AllLostItemsList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lostItems/LostItemAddForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/MapWithMarker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/MapWithMarker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/logout/Logout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logout/Logout.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +92,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701865129502</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Safe keep">
+      <option name="closed" value="true" />
+      <created>1701963857052</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701963857052</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +134,7 @@
     <MESSAGE value="Wrong endpoint name" />
     <MESSAGE value="Fully finished registration/login validation. Finished Lost/Found item admin get and remove." />
     <MESSAGE value="Fixed possible token error." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed possible token error." />
+    <MESSAGE value="Safe keep" />
+    <option name="LAST_COMMIT_MESSAGE" value="Safe keep" />
   </component>
 </project>
