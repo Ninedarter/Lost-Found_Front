@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React from 'react'
 
 import RegisterForm from './components/register/RegisterForm'
 import LoginForm from './components/login/LoginForm'
@@ -9,14 +9,11 @@ import Home from "./components/home/Home";
 
 import "./App.css";
 import {ProtectedRoute} from "./ProtectedRoute";
-import SuccessMessage from "./components/successMessage";
 import Logout from "./components/logout/Logout";
 import Main from "./components/main/Main";
 
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import AllLostItemsList from "./components/lostItems/AllLostItemsList";
-import AllFoundItemsList from "./components/foundItems/AllFoundItemsList";
+
 import FoundItemsCard from './components/foundItems/FoundItemsCard';
 import FoundItemAddForm from './components/foundItems/FoundItemAddForm';
 import AllLostItems from './components/lostItems/AllLostItems';
@@ -25,18 +22,21 @@ import AdminMainPanel from "./components/admin/panel/AdminMainPanel";
 import FoundItemsAdmin from "./components/admin/panel/foundItems/FoundItemsAdmin";
 import LostItemsAdmin from "./components/admin/panel/lostItems/LostItemsAdmin";
 
+import 'react-toastify/dist/ReactToastify.css';
+import ReportedPlayersAdmin from "./components/admin/panel/reportedPlayers/ReportedPlayersAdmin";
+import UserPanel from "./components/user/panel/UserPanel";
+
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                {/* 1️⃣ Wrap your routes in a pathless layout route */}
                 <Route element={<Layout/>}>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/register" element={<RegisterForm/>}/>
                     <Route path="/login" element={<LoginForm/>}/>
                     <Route path="/main" element={<ProtectedRoute/>}>
                         <Route path="index" element={<Main />}/>
-                        <Route path="info" element={<SuccessMessage/>}/>
+
                         <Route path="logout" element={<Logout/>}/>
                         <Route path="lost-items" element={<AllLostItems/>}/>
                         <Route path="found-items" element={<FoundItemsCard />}/>
@@ -47,7 +47,10 @@ function App() {
 
                             <Route path={"found-items"} element={<FoundItemsAdmin />} />
                             <Route path={"lost-items"} element={<LostItemsAdmin />} />
+                            <Route path={"reported-users"} element={<ReportedPlayersAdmin />} />
                         </Route>
+
+                        <Route path="user-info" element={<UserPanel />}/>
                     </Route>
                 </Route>
             </Routes>

@@ -11,6 +11,8 @@ const NavigationBar = () => {
 
     const adminPermission = token && token !== "undefined"? jwtDecode(token, {header: false}).roles.includes("ROLE_ADMIN") : false
 
+    const name = token && token !== "undefined"? jwtDecode(token, {header: false}).sub : ""
+
     const items = [
         {
             label: 'Login',
@@ -42,13 +44,7 @@ const NavigationBar = () => {
             },
             visible: check
         },
-        {
-            label: 'Info',
-            command: () => {
-                navigate('/main/info')
-            },
-            visible: check
-        },
+
         {
             label: 'Found Items',
             command: () => {
@@ -71,21 +67,19 @@ const NavigationBar = () => {
             visible: check
         },
         {
+            label: name,
+            command: () => {
+                navigate('/main/user-info')
+            },
+            visible: check
+        },
+        {
             label: 'Logout',
             command: () => {
                 navigate('/main/logout')
             },
             visible: check
-        },
-        {
-            button: 'Logout',
-            command: () => {
-                navigate('/main/logout')
-            },
-            visible: check
-
         }
-
     ];
 
     const where = check ? "/main/index" : "/"

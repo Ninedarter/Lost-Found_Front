@@ -4,7 +4,7 @@ import {Card} from "primereact/card";
 import {DataTable} from "primereact/datatable";
 import {Column} from "primereact/column";
 import {Dialog} from "primereact/dialog";
-import UserInfoWindow from "../../../user/UserInfoWindow";
+import UserInfoWindow from "../../../user/InfoWindow/UserInfoWindow";
 import {Button} from "primereact/button";
 import {toast} from "react-toastify";
 import {ConfirmPopup} from "primereact/confirmpopup";

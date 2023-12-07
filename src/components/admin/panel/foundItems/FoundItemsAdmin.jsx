@@ -7,7 +7,7 @@ import {Button} from "primereact/button";
 import {ConfirmPopup} from "primereact/confirmpopup";
 import {toast} from "react-toastify";
 import {Dialog} from "primereact/dialog";
-import UserInfoWindow from "../../../user/UserInfoWindow";
+import UserInfoWindow from "../../../user/InfoWindow/UserInfoWindow";
 
 const FoundItemsAdmin = () => {
     const [foundItems, setFoundItems] = useState([]);
@@ -15,6 +15,8 @@ const FoundItemsAdmin = () => {
     const [visible, setVisible] = useState(false);
     const [userDialog, setUserDialog] = useState(false)
 
+    const [dialogHeader, setDialogHeader] = useState("")
+    const [userId, setUserId] = useState(1)
 
     const getData = () => {
         axiosInstance.get("/api/v1/admin/foundItem/all")
@@ -30,13 +32,12 @@ const FoundItemsAdmin = () => {
 
     const userCheckButton = (row) => {
         return <>
-            <Dialog header={row.user.email + " Information"}
-                    visible={userDialog}
-                    style={{width: '50vw'}}
-                    onHide={() => setUserDialog(false)}>
-                <UserInfoWindow userId={row.user.id}/>
-            </Dialog>
-            <Button onClick={() => setUserDialog(true)}
+
+            <Button onClick={() => {
+                setUserDialog(true)
+                setDialogHeader(row.user.email)
+                setUserId(row.user.id)
+            }}
                     severity="info"
                     size={"small"}
             >{row.user.email}</Button>
@@ -44,8 +45,6 @@ const FoundItemsAdmin = () => {
     }
 
     const removeItem = (row) => {
-
-
         const acceptedToRemoveItem = () => {
             axiosInstance.delete("/api/v1/admin/foundItem/delete/" + row.id)
                 .then((response) => {
@@ -80,6 +79,13 @@ const FoundItemsAdmin = () => {
             <Column body={userCheckButton} field="user.email" header="User"></Column>
             <Column body={removeItem}></Column>
         </DataTable>
+
+        <Dialog header={dialogHeader + " Information"}
+                visible={userDialog}
+                style={{width: '50vw'}}
+                onHide={() => setUserDialog(false)}>
+            <UserInfoWindow userId={userId}/>
+        </Dialog>
     </Card>
 };
 
