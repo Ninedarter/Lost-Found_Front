@@ -6,10 +6,9 @@ const Logout = () => {
     const {setToken, setRefreshToken} = useAuth();
     const navigate = useNavigate();
 
-    setToken()
-    setRefreshToken()
-
     useEffect(() => {
+        setToken()
+        setRefreshToken()
         navigate("/", {replace: true});
     }, []);
 

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import axiosInstance from "../../api/customAxios";
+import axiosInstance from "../../../api/customAxios";
 import { Card } from 'react-bootstrap';
 import styles from './AllLostItems.css'
 
