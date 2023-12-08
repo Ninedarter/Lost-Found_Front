@@ -27,6 +27,7 @@ function MapContainer() {
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null)
   }, [])
+  
 
   return isLoaded ? (
     <div className="map">
