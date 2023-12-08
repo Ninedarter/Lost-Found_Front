@@ -22,7 +22,6 @@ const FoundItemsCard = () => {
             .then((response) => {
                     setIsLoaded(true);
                     setFoundItems(response.data)
-                    console.log(response.data)
                 }, (error) => {
                     setIsLoaded(true);
                     setError(error);

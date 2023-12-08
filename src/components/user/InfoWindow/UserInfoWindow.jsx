@@ -49,7 +49,7 @@ const UserInfoWindow = ({userId = -1, self = false}) => {
                 self ?
                     <ul>
                         <li>
-                            <div onClick={() => setChangePassword(true)}>Change Password</div>
+                            <div style={{cursor:"pointer"}} onClick={() => setChangePassword(true)}>Change Password</div>
                         </li>
                         <Dialog header={"Change Password"} visible={changePassword}
                                 onHide={() => setChangePassword(false)}>

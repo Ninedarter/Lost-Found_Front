@@ -28,13 +28,17 @@ const center = {
   lng: 23.881275,
 };
 
-export default function MapWithMarker({coordinates}) {
+export default function MapWithMarker({coordinates,restart}) {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey:  "AIzaSyB2tAu2LgRqzArvz3qJ-kup_XEI4aZXvug",
     libraries,
   });
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
+
+  useEffect(() => {
+    setSelected(null)
+  }, [restart]);
 
   useEffect(() => {
     if(selected != null) {

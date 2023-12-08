@@ -10,7 +10,6 @@ export const ProtectedRoute = () => {
 
     const checkIfBanned = () => {
         if(!checkedIfBanned) {
-            console.log(token)
             axiosInstance.get("api/v1/users/amibanned")
                 .then(res => {
                     if(res.data) {
