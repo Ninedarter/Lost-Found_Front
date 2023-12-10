@@ -110,7 +110,7 @@ const FoundItemAddForm = () => {
 
 
     return (
-
+    <div className="adding-form">
         <div className={"foundItemAdd-form-main"}>
         
                 <span className="p-float-label">
@@ -131,7 +131,7 @@ const FoundItemAddForm = () => {
                 </span>
 
             <span>
-                  <select onChange={upadateSelectCategory} value={category} style={{width: "100%"}}>
+                  <select className='select-category' onChange={upadateSelectCategory} value={category} style={{width: "100%"}}>
                       <option value="">-- Category --</option>
                       {categories.map((item, index) => (
                           <option key={item}>{item}</option>))}
@@ -167,6 +167,7 @@ const FoundItemAddForm = () => {
                     disabled={submitted}
             />
         </div>
+    </div>
 
     )
 

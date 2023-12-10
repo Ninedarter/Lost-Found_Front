@@ -134,7 +134,8 @@ const RegisterForm = () => {
     };
 
     return (
-        <Card title="Register">
+        <div className="registration">
+        <Card containerStyle={{ elevation: 0, borderColor: "white" }} title="Register">
             <div className={"register-form-main"}>
                 <span className="p-float-label">
                     <InputText id="name"
@@ -210,12 +211,14 @@ const RegisterForm = () => {
                     </div>
                 </div>
 
-                <Button label="Submit"
+                <Button label="SUBMIT"
                         onClick={(e) => handleSubmit(e)}
                         disabled={submitted}
                 />
             </div>
         </Card>
+        
+        </div>
     )
 }
 

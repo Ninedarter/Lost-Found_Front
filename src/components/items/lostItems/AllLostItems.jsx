@@ -1,9 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import axiosInstance from "../../../api/customAxios";
 import { Card } from 'react-bootstrap';
-import styles from './AllLostItems.css'
+import styles from './AllLostItems.css';
+import { ProgressSpinner } from 'primereact/progressspinner';
+import { Dialog } from 'primereact/dialog';
+import { Button } from 'primereact/button';
 
 const AllLostItems = () => {
+  const [selectedLost, setSelectedLost ] = useState(null);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [lostItems, setLostItems] = useState([]);
@@ -11,17 +15,21 @@ const AllLostItems = () => {
   const [searchParam] = useState(["title", "category", "dateLost", "description"]);
   const [filterParam, setFilterParam] = useState(["All"]);
 
-    useEffect(() => {
+    const getData = () => {
         axiosInstance.get("/api/v1/lostItem/all")
             .then((response) => {
                 setIsLoaded(true);
                 setLostItems(response.data)
-            },(error) => {
-              setIsLoaded(true);
-              setError(error);
-          }
-        );
-    }, []);
+            });
+    }
+
+    useEffect(() => {
+      getData()
+  }, []);
+
+  const onSelectLost = item => {
+      setSelectedLost(item);
+  };
 
   
     function search(items) {
@@ -51,7 +59,9 @@ const AllLostItems = () => {
     if (error) {
       return <>{error.message}</>;
   } else if (!isLoaded) {
-      return <>loading...</>;
+      return <div style={{display:"flex", justifyContent:"center", alignItems:"center", overflow: "hidden"}}>
+                  <ProgressSpinner style={{overflow:"hidden"}} />
+            </div>;
   } else {
   return (  
 <div>
@@ -93,26 +103,44 @@ const AllLostItems = () => {
 
 
           {search(lostItems).map((item, index) => (  
-<Card
-key={index} >
-    <div className="wrapper">
-    <div className="product-img">
-      <img src="https://clipground.com/images/lost-png-1.png"  width="327"/>
-    </div>
-    <div className="product-info">
-      <div className="product-text">
-        <h1>{item.title}</h1>
-        <h2>Category: {item.category}</h2>
-        <h2>Date Lost: {item.dateLost}</h2>
-        <p>{item.description}</p></div>
-      <div className="product-price-btn">
-        <p><span>REWARD: {item.reward} €</span></p>
-        <button type="button">Send message</button>
-      </div>
-    </div>
-  </div>
-  </Card>
-          ))}
+                <Card
+                key={index} >
+                    <div className="wrapper">
+                    <div className="product-img">
+                      <img src="https://clipground.com/images/lost-png-1.png"  width="327"/>
+                    </div>
+                    <div className="product-info">
+                      <div className="product-text">
+                        <h1>{item.title}</h1>
+                        <h2>Category: {item.category}</h2>
+                        <h2>Date Lost: {item.dateLost}</h2>
+                        <p>{item.description}</p></div>
+                      <div className="product-price-btn">
+                        <p><span style={{fontSize:"24px"}}>REWARD: {item.reward}</span></p>
+                        <button onClick={() => {onSelectLost(item)}}>More info</button>
+                      </div>
+                    </div>
+                  </div>
+                  </Card>
+                ))
+            }
+            {          
+                selectedLost && (
+                        <Dialog
+                            visible={true}
+                            onHide= { () => setSelectedLost (false)}>
+                            <div>
+                                <Card>
+                                    <div className="contact-info">
+                                            <h1>Contact Info</h1>
+                                            <h2>Email: {selectedLost.user.email}</h2>
+                                            <h2>Phone: {selectedLost.user.phoneNumber}</h2>
+                                    </div>
+                                </Card>
+                            </div>
+                        </Dialog>
+                        )
+                    }
           </div>
           </div>
   );

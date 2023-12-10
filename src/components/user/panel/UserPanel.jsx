@@ -5,9 +5,14 @@ import UserInfoWindow from "../InfoWindow/UserInfoWindow";
 
 const UserPanel = () => {
     return (
-        <Card title={"Your User Panel"}>
-          <UserInfoWindow self={true}/>
-        </Card>
+      <div className="userpanel">
+        <div>
+        <img src="https://moneydoneright.com/wp-content/uploads/lost-wallet-1500x370.jpg" style={{width:"100vw", height:"250px", margin:"0", padding:"0"}}></img>
+          <Card title={"Your User Panel"}>
+            <UserInfoWindow self={true}/>
+          </Card>
+          </div>
+        </div>
     );
 };
 

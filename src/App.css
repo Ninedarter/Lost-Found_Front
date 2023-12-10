@@ -1,12 +1,12 @@
 .main-window {
     margin: 0;
-    padding: 0;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    padding-top: 20px;
-    height: 100vh;
+    height:auto;
     width: 100vw;
+    background-color: rgb(221, 219, 219);
+    border: unset !important;
 }
 
 @media only screen and (max-width: 600px) {

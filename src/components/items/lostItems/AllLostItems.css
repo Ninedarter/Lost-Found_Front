@@ -46,7 +46,7 @@
   margin: 0 0 0 38px;
   padding-top: 52px;
   font-size: 34px;
-  color: #474747;
+  color: black;
 }
 
 .product-text h1,
@@ -60,7 +60,7 @@
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  color: #d2d2d2;
+  color: black;
   letter-spacing: 0.2em;
 }
 
@@ -68,7 +68,7 @@
   height: 125px;
   margin: 0 0 0 38px;
   font-family: 'Playfair Display', serif;
-  color: #8d8d8d;
+  color: black;
   line-height: 1.7em;
   font-size: 15px;
   font-weight: lighter;
@@ -91,14 +91,13 @@
   margin: 0 0 0 38px;
   font-size: 28px;
   font-weight: lighter;
-  color: #474747;
+  color: #474747ae;
 }
 
 span {
   display: inline-block;
   height: 50px;
   font-family: 'Suranna', serif;
-  font-size: 34px;
 }
 
 .product-price-btn button {
@@ -116,18 +115,18 @@ span {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: #ffffff;
-  background-color: #9cebd5;
+  background-color: #79b0a1;
   cursor: pointer;
   outline: none;
 }
 
 .product-price-btn button:hover {
-  background-color: #79b0a1;
+  background-color: #6F7386;
 }
 
 .p-card {
-      background-color: #B2D2CA;
-      padding: 15px;
+  background-color: rgba(255, 255, 255, 0.975);
+  padding: 15px;
 }
 
 .search-input {

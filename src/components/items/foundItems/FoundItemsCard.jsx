@@ -2,14 +2,12 @@ import React, {useEffect, useRef, useState} from 'react';
 import axiosInstance from "../../../api/customAxios";
 import {Card} from 'react-bootstrap';
 import styles from './FoundItemsCard.css';
-import {ConfirmPopup} from "primereact/confirmpopup";
-import {toast} from "react-toastify";
 import {Dialog} from "primereact/dialog";
-import UserInfoWindow from '../../user/InfoWindow/UserInfoWindow';
 import {Button} from 'primereact/button';
-
+import { ProgressSpinner } from 'primereact/progressspinner';
 
 const FoundItemsCard = () => {
+    const [selectedFound, setSelectedFound ] = useState(null);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [foundItems, setFoundItems] = useState([]);
@@ -17,18 +15,23 @@ const FoundItemsCard = () => {
     const [searchParam] = useState(["title", "category", "dateFound", "description"]);
     const [filterParam, setFilterParam] = useState(["All"]);
 
-    useEffect(() => {
+    const getData = () => {
         axiosInstance.get("/api/v1/foundItem/all")
             .then((response) => {
                     setIsLoaded(true);
                     setFoundItems(response.data)
-                }, (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            );
+                    console.log(response.data)
+                    
+                });
+            }
+    
+    useEffect(() => {
+        getData()
     }, []);
 
+    const onSelectFound = item => {
+        setSelectedFound(item);
+    };
 
     function search(items) {
         return items.filter((item) => {
@@ -57,7 +60,9 @@ const FoundItemsCard = () => {
     if (error) {
         return <>{error.message}</>;
     } else if (!isLoaded) {
-        return <>loading...</>;
+        return <div style={{display:"flex", justifyContent:"center", alignItems:"center", overflow: "hidden"}}>
+                    <ProgressSpinner style={{overflow:"hidden"}} />
+                </div>;
     } else {
         return (
             <div>
@@ -113,15 +118,31 @@ const FoundItemsCard = () => {
                                         <h2>Date Found: {item.dateFound}</h2>
                                         <p>{item.description}</p></div>
                                     <div className="product-price-btn">
-                                        <p><span>Yours?</span></p>
-
-                                        <button>More Info</button>
-
+                                    <Button onClick={() => {onSelectFound(item)}}>More info</Button>
                                     </div>
                                 </div>
                             </div>
                         </Card>
-                    ))}
+                    ))
+                    }
+                    
+                    {          
+                        selectedFound && (
+                        <Dialog
+                            visible={true}
+                            onHide= { () => setSelectedFound (false)}>
+                            <div>
+                                <Card>
+                                    <div className="contact-info">
+                                            <h1>Contact Info</h1>
+                                            <h2>Email: {selectedFound.user.email}</h2>
+                                            <h2>Phone: {selectedFound.user.phoneNumber}</h2>
+                                    </div>
+                                </Card>
+                            </div>
+                        </Dialog>
+                        )
+                    }
                 </div>
             </div>
         );

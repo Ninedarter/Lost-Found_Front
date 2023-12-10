@@ -85,10 +85,10 @@ const NavigationBar = () => {
     const where = check ? "/main/index" : "/"
 
     const start = <Link to={where} style={{margin: "5px"}}>
-        <img src={"/icona.png"} alt={":("} width={"67px"}/>
+        <img src={"/logo.png"} alt={":("} width={"130px"}/>
     </Link>
 
-    return <Menubar start={start} model={items} style={{display: "flex", justifyContent: "space-between"}}/>
+    return <Menubar start={start} model={items} style={{backgroundcolor: "white", display: "flex", justifyContent: "space-between"}}/>
 };
 
 export default NavigationBar;

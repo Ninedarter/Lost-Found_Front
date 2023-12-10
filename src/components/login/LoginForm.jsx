@@ -76,6 +76,7 @@ const LoginForm = () => {
     };
 
     return (
+        <div className="loginform">
         <Card title="Login">
             <div className={"login-form-main"}>
                   <span className="p-float-label">
@@ -99,10 +100,10 @@ const LoginForm = () => {
             </span>
             
             <div>
-            <img src='https://th.bing.com/th/id/R.8ddf4c8f5b3dfb30ff3edfb4ca6358a3?rik=e%2f6aTxrfLPzEyA&riu=http%3a%2f%2fwww.yourzbs.com%2fwp-content%2fuploads%2f2019%2f06%2fThe-Emotional-Side-Of-Returning-Lost-Objects.jpg&ehk=UrjhuURD%2f3HZ%2bBoNc4uEkhuA6bEn3KJ7YWvo2FTBLJg%3d&risl=&pid=ImgRaw&r=0' style={{height:"310px", borderRadius:"7px"}}></img>
+            <img src='https://th.bing.com/th/id/R.e797bc2dbec1d27d8f6532f6e48f75d3?rik=MX39sRvEHANpQA&pid=ImgRaw&r=0' style={{height:"310px", borderRadius:"7px"}}></img>
             </div>
             <span>
-                <Button label="Submit"
+                <Button label="SUBMIT"
                         onClick={(e) => handleSubmit(e)}
                         style={{width:"100%"}}
                         disabled={submitted}
@@ -110,6 +111,7 @@ const LoginForm = () => {
                 </span>
             </div>
         </Card>
+        </div>
     )
 }
 

@@ -48,7 +48,7 @@
     margin: 0 0 0 38px;
     padding-top: 52px;
     font-size: 34px;
-    color: #474747;
+    color: #474747ae;
   }
   
   .product-text h1,
@@ -62,7 +62,7 @@
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     text-transform: uppercase;
-    color: #d2d2d2;
+    color: #474747ae;
     letter-spacing: 0.2em;
   }
   
@@ -70,7 +70,7 @@
     height: 125px;
     margin: 0 0 0 38px;
     font-family: 'Playfair Display', serif;
-    color: #8d8d8d;
+    color: #474747ae;
     line-height: 1.7em;
     font-size: 15px;
     font-weight: lighter;

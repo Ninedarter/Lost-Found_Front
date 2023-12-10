@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {InputText} from "primereact/inputtext";
-import {Button} from "primereact/button";
+import { Button } from 'primereact/button';
 import {InputLabel} from '@mui/material'
 import "./LostItemAddForm.css";
 import {Calendar} from "primereact/calendar";
@@ -130,7 +130,7 @@ const LostItemAddForm = () => {
                 </span>
 
             <span>
-                  <select onChange={upadateSelectCategory} value={category} style={{width: "100%"}}>
+                  <select className='select-category' onChange={upadateSelectCategory} value={category} style={{width: "100%"}}>
                       <option value="">-- Category --</option>
                       {categories.map((item, index) => (
                           <option key={item}>{item}</option>))}
@@ -160,21 +160,22 @@ const LostItemAddForm = () => {
                 }}
                 restart={restartValue}
             ></MapWithMarker>
+            
+                <span className="p-float-label">
+                        <InputText id="reward"
+                                value={reward}
+                                onChange={(e) => setReward(e.target.value)}
+                                style={{width: "100%"}}
+                        />
+                        <label htmlFor="reward">Reward</label>
+                    </span>
 
-            <span className="p-float-label">
-                    <InputText id="reward"
-                               value={reward}
-                               onChange={(e) => setReward(e.target.value)}
-                               style={{width: "100%"}}
-                    />
-                    <label htmlFor="reward">Reward</label>
-                </span>
-
-            <Button label="Submit"
-                    onClick={(e) => handleSubmit(e)}
-                    disabled={submitted}
-            />
-        </div>
+                <Button label="Submit"
+                        onClick={(e) => handleSubmit(e)}
+                        disabled={submitted}
+                />
+            </div>
+        
     )
 
 }
