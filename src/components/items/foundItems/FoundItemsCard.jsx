@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import axiosInstance from "../../../api/customAxios";
 import {Card} from 'react-bootstrap';
-import styles from './FoundItemsCard.css';
+import './FoundItemsCard.css';
 import {Dialog} from "primereact/dialog";
 import {Button} from 'primereact/button';
 import { ProgressSpinner } from 'primereact/progressspinner';
@@ -100,7 +100,7 @@ const FoundItemsCard = () => {
                     </div>
                 </div>
 
-                <div className="getAllcontainer">
+                <div className="getAllcontainerFoundItems">
 
                     {search(foundItems).map((item, index) => (
                         <Card
@@ -111,7 +111,7 @@ const FoundItemsCard = () => {
                                         src="https://cdn3.iconfinder.com/data/icons/search-36/512/283_Find_Search_View-256.png"
                                         width="327" alt={"photo"}/>
                                 </div>
-                                <div className="product-info">
+                                <div className="product-info"  style={{overflow:"hidden"}}>
                                     <div className="product-text">
                                         <h1>{item.title}</h1>
                                         <h2>Category: {item.category}</h2>
