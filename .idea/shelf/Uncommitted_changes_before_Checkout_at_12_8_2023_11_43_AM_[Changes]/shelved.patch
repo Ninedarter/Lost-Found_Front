@@ -1,0 +1,203 @@
+Index: src/components/foundItems/FoundItemsCard.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useEffect, useRef, useState} from 'react';\r\nimport axiosInstance from \"../../api/customAxios\";\r\nimport { Card } from 'react-bootstrap';\r\nimport styles from './FoundItemsCard.css';\r\nimport {ConfirmPopup} from \"primereact/confirmpopup\";\r\nimport {toast} from \"react-toastify\";\r\nimport {Dialog} from \"primereact/dialog\";\r\nimport UserInfoWindow from '../user/UserInfoWindow';\r\nimport { Button } from 'primereact/button';\r\n\r\n\r\nconst FoundItemsCard = () => {\r\n  const [error, setError] = useState(null);\r\n  const [isLoaded, setIsLoaded] = useState(false);\r\n  const [foundItems, setFoundItems] = useState([]);\r\n  const [q, setQ] = useState(\"\");\r\n  const [searchParam] = useState([\"title\", \"category\", \"dateFound\", \"description\"]);\r\n  const [filterParam, setFilterParam] = useState([\"All\"]);\r\n\r\n    useEffect(() => {\r\n        axiosInstance.get(\"/api/v1/foundItem/all\")\r\n            .then((response) => {\r\n                setIsLoaded(true);\r\n                setFoundItems(response.data)\r\n                console.log(response.data)\r\n            },(error) => {\r\n              setIsLoaded(true);\r\n              setError(error);\r\n          }\r\n        );\r\n    }, []);\r\n\r\n  \r\n    function search(items) {\r\n    return items.filter((item) => {\r\n      if (item.category == filterParam) {\r\n        return searchParam.some((newItem) => {\r\n          return (\r\n              item[newItem]\r\n                  .toString()\r\n                  .toLowerCase()\r\n                  .indexOf(q.toLowerCase()) > -1\r\n                );\r\n            });\r\n            } else if (filterParam == \"All\") {\r\n              return searchParam.some((newItem) => {\r\n                  return (\r\n                      item[newItem]\r\n                          .toString()\r\n                          .toLowerCase()\r\n                          .indexOf(q.toLowerCase()) > -1\r\n                          );  \r\n                        });\r\n                    }\r\n                });\r\n            }\r\n\r\n    if (error) {\r\n      return <>{error.message}</>;\r\n  } else if (!isLoaded) {\r\n      return <>loading...</>;\r\n  } else {\r\n  return (  \r\n<div>\r\n    <div className=\"search-wrapper\">\r\n                        <label htmlFor=\"search-form\">\r\n                            <input\r\n                                type=\"search\"\r\n                                name=\"search-form\"\r\n                                id=\"search-form\"\r\n                                className=\"search-input\"\r\n                                placeholder=\"Search...\"\r\n                                value={q}\r\n                                onChange={(e) => setQ(e.target.value)}\r\n                            />\r\n                            \r\n                            </label>\r\n                            <div className=\"select\">\r\n                        <select\r\n                        onChange={(e) => {\r\n                          setFilterParam(e.target.value);\r\n                      }}\r\n                      className=\"custom-select\"\r\n                      aria-label=\"Filter Items By Categories\"\r\n                  >\r\n                      <option value=\"All\">Filter By Category</option>\r\n                      <option value=\"CLOTHES\">CLOTHES</option>\r\n                      <option value=\"WALLET\">WALLET</option>\r\n                      <option value=\"PHONE\">PHONE</option>\r\n                      <option value=\"JEWELRY\">JEWELRY</option>\r\n                      <option value=\"GLASSES\">GLASSES</option>\r\n                      <option value=\"KEYS\">KEYS</option>\r\n                      <option value=\"OTHER\">OTHER</option>\r\n                  </select>\r\n                  <span className=\"focus\"></span>\r\n                    </div>\r\n                </div>\r\n\r\n                    <div className=\"getAllcontainer\">\r\n\r\n          {search(foundItems).map((item, index) => (\r\n<Card\r\nkey={index} >\r\n    <div className=\"wrapper\">\r\n    <div className=\"product-img\">\r\n      <img src=\"https://cdn3.iconfinder.com/data/icons/search-36/512/283_Find_Search_View-256.png\" width=\"327\"/>\r\n    </div>\r\n    <div className=\"product-info\">\r\n      <div className=\"product-text\">\r\n        <h1>{item.title}</h1>\r\n        <h2>Category: {item.category}</h2>\r\n        <h2>Date Found: {item.dateFound}</h2>\r\n        <p>{item.description}</p></div>\r\n      <div class=\"product-price-btn\">\r\n        <p><span>Yours?</span></p>\r\n\r\n        <button>More Info </button>\r\n  \r\n      </div>\r\n    </div>\r\n  </div>\r\n  </Card>\r\n          ))}\r\n          </div>\r\n          </div>\r\n  );\r\n}\r\n}\r\n\r\nexport default FoundItemsCard
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/foundItems/FoundItemsCard.jsx b/src/components/foundItems/FoundItemsCard.jsx
+--- a/src/components/foundItems/FoundItemsCard.jsx	
++++ b/src/components/foundItems/FoundItemsCard.jsx	
+@@ -7,6 +7,7 @@
+ import {Dialog} from "primereact/dialog";
+ import UserInfoWindow from '../user/UserInfoWindow';
+ import { Button } from 'primereact/button';
++import { ProgressSpinner } from 'primereact/progressspinner';
+ 
+ 
+ const FoundItemsCard = () => {
+@@ -17,7 +18,12 @@
+   const [searchParam] = useState(["title", "category", "dateFound", "description"]);
+   const [filterParam, setFilterParam] = useState(["All"]);
+ 
+-    useEffect(() => {
++  const buttonEl = useRef(null);
++    const [visible, setVisible] = useState(false);
++    const [userDialog, setUserDialog] = useState(false)
++
++
++    const getData = () => {
+         axiosInstance.get("/api/v1/foundItem/all")
+             .then((response) => {
+                 setIsLoaded(true);
+@@ -28,8 +34,11 @@
+               setError(error);
+           }
+         );
+-    }, []);
+-
++    };
++    useEffect(() => {
++      getData()
++  }, []);
++  
+   
+     function search(items) {
+     return items.filter((item) => {
+@@ -58,7 +67,9 @@
+     if (error) {
+       return <>{error.message}</>;
+   } else if (!isLoaded) {
+-      return <>loading...</>;
++      return <div style={{display:"flex", justifyContent:"center", alignItems:"center", overflow: "hidden"}}>
++      <ProgressSpinner style={{overflow:"hidden"}} />
++  </div>;
+   } else {
+   return (  
+ <div>
+@@ -111,8 +122,7 @@
+         <h2>Category: {item.category}</h2>
+         <h2>Date Found: {item.dateFound}</h2>
+         <p>{item.description}</p></div>
+-      <div class="product-price-btn">
+-        <p><span>Yours?</span></p>
++      <div className="product-price-btn">
+ 
+         <button>More Info </button>
+   
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6d4753eb-9cd9-486b-bd15-221621c94554\" name=\"Changes\" comment=\"Wrong endpoint name\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/package-lock.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/package-lock.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/package.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/package.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/App.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/App.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/App.jsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/App.jsx\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.jsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.jsx\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/login/LoginForm.jsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/login/LoginForm.jsx\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/lostItems/AllLostItems.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/lostItems/AllLostItems.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/lostItems/AllLostItems.jsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/lostItems/AllLostItems.jsx\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/lostItems/LostItemAddForm.jsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/lostItems/LostItemAddForm.jsx\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/index.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/index.css\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2YquivEReO7H5Rq8V4MCRqWFOn7\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"Forms\",\r\n    \"last_opened_file_path\": \"C:/Users/Eridas/Desktop/Lost-Found_front\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"ts.external.directory.path\": \"C:\\\\Program Files\\\\JetBrains\\\\WebStorm 2023.2.3\\\\plugins\\\\javascript-impl\\\\jsLanguageServicesImpl\\\\external\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\motie\\Desktop\\LostAndFound\\Lost-Found_Front\\src\\components\\foundItems\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\motie\\Desktop\\LostAndFound\\Lost-Found_Front\\src\" />\r\n      <recent name=\"C:\\Users\\motie\\Desktop\\LostAndFound\\Lost-Found_Front\\src\\components\\map\" />\r\n      <recent name=\"C:\\Users\\motie\\Desktop\\LostAndFound\\Lost-Found_Front\\src\\components\\foundItems\" />\r\n      <recent name=\"C:\\Users\\motie\\Desktop\\LostAndFound\\Lost-Found_Front\\src\\components\\lostItems\" />\r\n      <recent name=\"C:\\Users\\motie\\Desktop\\LostAndFound\\Lost-Found_Front\\src\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6d4753eb-9cd9-486b-bd15-221621c94554\" name=\"Changes\" comment=\"\" />\r\n      <created>1701265561270</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1701265561270</updated>\r\n      <workItem from=\"1701333972897\" duration=\"20318000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Wrong endpoint name\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701686657741</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701686657741</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"main\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"Wrong endpoint name\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Wrong endpoint name\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,19 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="6d4753eb-9cd9-486b-bd15-221621c94554" name="Changes" comment="Wrong endpoint name">
++    <list default="true" id="6d4753eb-9cd9-486b-bd15-221621c94554" name="Changes" comment="Filter by categories added">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.css" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/foundItems/FoundItemsCard.jsx" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/login/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/LoginForm.jsx" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/lostItems/AllLostItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lostItems/AllLostItems.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/lostItems/AllLostItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lostItems/AllLostItems.jsx" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/lostItems/LostItemAddForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lostItems/LostItemAddForm.jsx" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Main.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/map/MapContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/MapContainer.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -24,7 +16,26 @@
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="main" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;gitsma&quot;
++  }
++}</component>
++  <component name="GithubPullRequestsUISettings">
++    <option name="selectedUrlAndAccountId">
++      <UrlAndAccount>
++        <option name="accountId" value="97d20e50-36cf-42dd-ae94-1cfed88970bc" />
++        <option name="url" value="https://github.com/Ninedarter/Lost-Found_front" />
++      </UrlAndAccount>
++    </option>
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+@@ -40,23 +51,23 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ASKED_ADD_EXTERNAL_FILES": "true",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "git-widget-placeholder": "Forms",
+-    "last_opened_file_path": "C:/Users/Eridas/Desktop/Lost-Found_front",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;Forms&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/Eridas/Desktop/Lost Found Back&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\foundItems" />
+@@ -87,7 +98,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1701686657741</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="Filter by categories added">
++      <option name="closed" value="true" />
++      <created>1701930693272</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1701930693272</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -104,7 +123,7 @@
+                   <entry key="branch">
+                     <value>
+                       <list>
+-                        <option value="main" />
++                        <option value="Forms" />
+                       </list>
+                     </value>
+                   </entry>
+@@ -119,6 +138,7 @@
+   <component name="VcsManagerConfiguration">
+     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+     <MESSAGE value="Wrong endpoint name" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Wrong endpoint name" />
++    <MESSAGE value="Filter by categories added" />
++    <option name="LAST_COMMIT_MESSAGE" value="Filter by categories added" />
+   </component>
+ </project>
+\ No newline at end of file

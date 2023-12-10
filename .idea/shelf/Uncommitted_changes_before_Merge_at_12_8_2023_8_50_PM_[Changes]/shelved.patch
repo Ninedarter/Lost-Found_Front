@@ -1,0 +1,115 @@
+Index: src/components/lostItems/AllLostItems.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useEffect, useState} from 'react';\r\nimport axiosInstance from \"../../api/customAxios\";\r\nimport { Card } from 'react-bootstrap';\r\nimport styles from './AllLostItems.css'\r\n\r\nconst AllLostItems = () => {\r\n  const [error, setError] = useState(null);\r\n  const [isLoaded, setIsLoaded] = useState(false);\r\n  const [lostItems, setLostItems] = useState([]);\r\n  const [q, setQ] = useState(\"\");\r\n  const [searchParam] = useState([\"title\", \"category\", \"dateLost\", \"description\"]);\r\n  const [filterParam, setFilterParam] = useState([\"All\"]);\r\n\r\n    useEffect(() => {\r\n        axiosInstance.get(\"/api/v1/lostItem/all\")\r\n            .then((response) => {\r\n                setIsLoaded(true);\r\n                setLostItems(response.data)\r\n            },(error) => {\r\n              setIsLoaded(true);\r\n              setError(error);\r\n          }\r\n        );\r\n    }, []);\r\n\r\n  \r\n    function search(items) {\r\n    return items.filter((item) => {\r\n      if (item.category == filterParam) {\r\n        return searchParam.some((newItem) => {\r\n          return (\r\n              item[newItem]\r\n                  .toString()\r\n                  .toLowerCase()\r\n                  .indexOf(q.toLowerCase()) > -1\r\n                );\r\n            });\r\n            } else if (filterParam == \"All\") {\r\n              return searchParam.some((newItem) => {\r\n                  return (\r\n                      item[newItem]\r\n                          .toString()\r\n                          .toLowerCase()\r\n                          .indexOf(q.toLowerCase()) > -1\r\n                          );  \r\n                        });\r\n                    }\r\n                });\r\n            }\r\n\r\n    if (error) {\r\n      return <>{error.message}</>;\r\n  } else if (!isLoaded) {\r\n      return <>loading...</>;\r\n  } else {\r\n  return (  \r\n<div>\r\n    <div className=\"search-wrapper\">\r\n                        <label htmlFor=\"search-form\">\r\n                            <input\r\n                                type=\"search\"\r\n                                name=\"search-form\"\r\n                                id=\"search-form\"\r\n                                className=\"search-input\"\r\n                                placeholder=\"Search...\"\r\n                                value={q}\r\n                                onChange={(e) => setQ(e.target.value)}\r\n                            />\r\n                            \r\n                            </label>\r\n                            <div className=\"select\">\r\n                        <select\r\n                        onChange={(e) => {\r\n                          setFilterParam(e.target.value);\r\n                      }}\r\n                      className=\"custom-select\"\r\n                      aria-label=\"Filter Items By Categories\"\r\n                  >\r\n                      <option value=\"All\">Filter By Category</option>\r\n                      <option value=\"CLOTHES\">CLOTHES</option>\r\n                      <option value=\"WALLET\">WALLET</option>\r\n                      <option value=\"PHONE\">PHONE</option>\r\n                      <option value=\"JEWELRY\">JEWELRY</option>\r\n                      <option value=\"GLASSES\">GLASSES</option>\r\n                      <option value=\"KEYS\">KEYS</option>\r\n                      <option value=\"OTHER\">OTHER</option>\r\n                  </select>\r\n                  <span className=\"focus\"></span>\r\n                    </div>\r\n                </div>\r\n\r\n                    <div className=\"getAllcontainer\">\r\n\r\n\r\n          {search(lostItems).map((item, index) => (  \r\n<Card\r\nkey={index} >\r\n    <div className=\"wrapper\">\r\n    <div className=\"product-img\">\r\n      <img src=\"https://clipground.com/images/lost-png-1.png\"  width=\"327\"/>\r\n    </div>\r\n    <div className=\"product-info\">\r\n      <div className=\"product-text\">\r\n        <h1>{item.title}</h1>\r\n        <h2>Category: {item.category}</h2>\r\n        <h2>Date Lost: {item.dateLost}</h2>\r\n        <p>{item.description}</p></div>\r\n      <div className=\"product-price-btn\">\r\n        <p><span>REWARD: {item.reward} €</span></p>\r\n        <button type=\"button\">Send message</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </Card>\r\n          ))}\r\n          </div>\r\n          </div>\r\n  );\r\n};\r\n}\r\n\r\nexport default AllLostItems
+===================================================================
+diff --git a/src/components/lostItems/AllLostItems.jsx b/src/components/lostItems/AllLostItems.jsx
+--- a/src/components/lostItems/AllLostItems.jsx	
++++ b/src/components/lostItems/AllLostItems.jsx	
+@@ -106,7 +106,7 @@
+         <h2>Date Lost: {item.dateLost}</h2>
+         <p>{item.description}</p></div>
+       <div className="product-price-btn">
+-        <p><span>REWARD: {item.reward} €</span></p>
++        <p>REWARD: {item.reward}</p>
+         <button type="button">Send message</button>
+       </div>
+     </div>
+Index: src/components/foundItems/FoundItemsCard.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.getAllcontainer {\r\n    font-family: 'Bentham';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    display: flex;\r\n    flex-wrap:wrap;\r\n    gap: 20px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}    \r\n\r\n  .wrapper {\r\n    height: 420px;\r\n    width: 600px;\r\n    margin: 10px auto;\r\n    border-radius: 7px 7px 7px 7px;\r\n    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);\r\n  }\r\n  \r\n  .product-img {\r\n    float: left;\r\n    height: 420px;\r\n    width: 300px;\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  \r\n  .product-img img {\r\n    border-radius: 7px 0 0 7px;\r\n  }\r\n  \r\n  .product-info {\r\n    float: left;\r\n    height: 420px;\r\n    width: 300px;\r\n    border-radius: 0 7px 10px 7px;\r\n    background-color: #ffffff;\r\n  }\r\n    \r\n  .product-text {\r\n    height: 300px;\r\n    width: 327px;\r\n  }\r\n  \r\n  .product-text h1 {\r\n    margin: 0 0 0 38px;\r\n    padding-top: 52px;\r\n    font-size: 34px;\r\n    color: #474747;\r\n  }\r\n  \r\n  .product-text h1,\r\n  .product-price-btn p {\r\n    font-family: 'Bentham', serif;\r\n  }\r\n  \r\n  .product-text h2 {\r\n    margin: 0 0 47px 38px;\r\n    font-size: 13px;\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 400;\r\n    text-transform: uppercase;\r\n    color: #d2d2d2;\r\n    letter-spacing: 0.2em;\r\n  }\r\n  \r\n  .product-text p {\r\n    height: 125px;\r\n    margin: 0 0 0 38px;\r\n    font-family: 'Playfair Display', serif;\r\n    color: #8d8d8d;\r\n    line-height: 1.7em;\r\n    font-size: 15px;\r\n    font-weight: lighter;\r\n    overflow: hidden;\r\n  }\r\n  \r\n  .product-price-btn {\r\n    height: 103px;\r\n    width: 327px;\r\n    margin-top: 17px;\r\n    position: relative;\r\n  }\r\n  \r\n  .product-price-btn p {\r\n    display: inline-block;\r\n    position: absolute;\r\n    top: -13px;\r\n    height: 50px;\r\n    font-family: 'Trocchi', serif;\r\n    margin: 0 0 0 38px;\r\n    font-size: 28px;\r\n    font-weight: lighter;\r\n    color: #474747;\r\n  }\r\n  \r\n  span {\r\n    display: inline-block;\r\n    height: 50px;\r\n    font-family: 'Suranna', serif;\r\n    font-size: 34px;\r\n  }\r\n  \r\n  .product-price-btn button {\r\n    float: right;\r\n    display: inline-block;\r\n    height: 50px;\r\n    width: 176px;\r\n    margin: 0 40px 0 16px;\r\n    box-sizing: border-box;\r\n    border: transparent;\r\n    border-radius: 60px;\r\n    font-family: 'Raleway', sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    text-transform: uppercase;\r\n    letter-spacing: 0.2em;\r\n    color: #ffffff;\r\n    background-color: #9cebd5;\r\n    cursor: pointer;\r\n    outline: none;\r\n  }\r\n  \r\n  .product-price-btn button:hover {\r\n    background-color: #79b0a1;\r\n  }\r\n\r\n  .p-card {\r\n        background-color: #B2D2CA;\r\n        padding: 15px;\r\n  }\r\n\r\n  .search-input {\r\n    width: 30%;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    border-radius: 7px;\r\n    float:right;\r\n    margin-right: 20px;\r\n  }\r\n\r\n  .custom-select {\r\n    width: 30%;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    border-radius: 7px;\r\n    float:right;\r\n    margin-right: 20px;\r\n  }\r\n\r\n
+===================================================================
+diff --git a/src/components/foundItems/FoundItemsCard.css b/src/components/foundItems/FoundItemsCard.css
+--- a/src/components/foundItems/FoundItemsCard.css	
++++ b/src/components/foundItems/FoundItemsCard.css	
+@@ -48,7 +48,7 @@
+     margin: 0 0 0 38px;
+     padding-top: 52px;
+     font-size: 34px;
+-    color: #474747;
++    color: black;
+   }
+   
+   .product-text h1,
+@@ -62,7 +62,7 @@
+     font-family: 'Raleway', sans-serif;
+     font-weight: 400;
+     text-transform: uppercase;
+-    color: #d2d2d2;
++    color: black;
+     letter-spacing: 0.2em;
+   }
+   
+@@ -70,7 +70,7 @@
+     height: 125px;
+     margin: 0 0 0 38px;
+     font-family: 'Playfair Display', serif;
+-    color: #8d8d8d;
++    color: black;
+     line-height: 1.7em;
+     font-size: 15px;
+     font-weight: lighter;
+Index: src/components/foundItems/FoundItemsCard.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useEffect, useRef, useState} from 'react';\r\nimport axiosInstance from \"../../api/customAxios\";\r\nimport {Card} from 'react-bootstrap';\r\nimport styles from './FoundItemsCard.css';\r\nimport {ConfirmPopup} from \"primereact/confirmpopup\";\r\nimport {toast} from \"react-toastify\";\r\nimport {Dialog} from \"primereact/dialog\";\r\nimport UserInfoWindow from '../user/InfoWindow/UserInfoWindow';\r\nimport {Button} from 'primereact/button';\r\n\r\n\r\nconst FoundItemsCard = () => {\r\n    const [error, setError] = useState(null);\r\n    const [isLoaded, setIsLoaded] = useState(false);\r\n    const [foundItems, setFoundItems] = useState([]);\r\n    const [q, setQ] = useState(\"\");\r\n    const [searchParam] = useState([\"title\", \"category\", \"dateFound\", \"description\"]);\r\n    const [filterParam, setFilterParam] = useState([\"All\"]);\r\n\r\n    useEffect(() => {\r\n        axiosInstance.get(\"/api/v1/foundItem/all\")\r\n            .then((response) => {\r\n                    setIsLoaded(true);\r\n                    setFoundItems(response.data)\r\n                    console.log(response.data)\r\n                }, (error) => {\r\n                    setIsLoaded(true);\r\n                    setError(error);\r\n                }\r\n            );\r\n    }, []);\r\n\r\n\r\n    function search(items) {\r\n        return items.filter((item) => {\r\n            if (item.category == filterParam) {\r\n                return searchParam.some((newItem) => {\r\n                    return (\r\n                        item[newItem]\r\n                            .toString()\r\n                            .toLowerCase()\r\n                            .indexOf(q.toLowerCase()) > -1\r\n                    );\r\n                });\r\n            } else if (filterParam == \"All\") {\r\n                return searchParam.some((newItem) => {\r\n                    return (\r\n                        item[newItem]\r\n                            .toString()\r\n                            .toLowerCase()\r\n                            .indexOf(q.toLowerCase()) > -1\r\n                    );\r\n                });\r\n            }\r\n        });\r\n    }\r\n\r\n    if (error) {\r\n        return <>{error.message}</>;\r\n    } else if (!isLoaded) {\r\n        return <>loading...</>;\r\n    } else {\r\n        return (\r\n            <div>\r\n                <div className=\"search-wrapper\">\r\n                    <label htmlFor=\"search-form\">\r\n                        <input\r\n                            type=\"search\"\r\n                            name=\"search-form\"\r\n                            id=\"search-form\"\r\n                            className=\"search-input\"\r\n                            placeholder=\"Search...\"\r\n                            value={q}\r\n                            onChange={(e) => setQ(e.target.value)}\r\n                        />\r\n\r\n                    </label>\r\n                    <div className=\"select\">\r\n                        <select\r\n                            onChange={(e) => {\r\n                                setFilterParam(e.target.value);\r\n                            }}\r\n                            className=\"custom-select\"\r\n                            aria-label=\"Filter Items By Categories\"\r\n                        >\r\n                            <option value=\"All\">Filter By Category</option>\r\n                            <option value=\"CLOTHES\">CLOTHES</option>\r\n                            <option value=\"WALLET\">WALLET</option>\r\n                            <option value=\"PHONE\">PHONE</option>\r\n                            <option value=\"JEWELRY\">JEWELRY</option>\r\n                            <option value=\"GLASSES\">GLASSES</option>\r\n                            <option value=\"KEYS\">KEYS</option>\r\n                            <option value=\"OTHER\">OTHER</option>\r\n                        </select>\r\n                        <span className=\"focus\"></span>\r\n                    </div>\r\n                </div>\r\n\r\n                <div className=\"getAllcontainer\">\r\n\r\n                    {search(foundItems).map((item, index) => (\r\n                        <Card\r\n                            key={index}>\r\n                            <div className=\"wrapper\">\r\n                                <div className=\"product-img\">\r\n                                    <img\r\n                                        src=\"https://cdn3.iconfinder.com/data/icons/search-36/512/283_Find_Search_View-256.png\"\r\n                                        width=\"327\" alt={\"photo\"}/>\r\n                                </div>\r\n                                <div className=\"product-info\">\r\n                                    <div className=\"product-text\">\r\n                                        <h1>{item.title}</h1>\r\n                                        <h2>Category: {item.category}</h2>\r\n                                        <h2>Date Found: {item.dateFound}</h2>\r\n                                        <p>{item.description}</p></div>\r\n                                    <div className=\"product-price-btn\">\r\n                                        <p><span>Yours?</span></p>\r\n\r\n                                        <button>More Info</button>\r\n\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </Card>\r\n                    ))}\r\n                </div>\r\n            </div>\r\n        );\r\n    }\r\n}\r\n\r\nexport default FoundItemsCard
+===================================================================
+diff --git a/src/components/foundItems/FoundItemsCard.jsx b/src/components/foundItems/FoundItemsCard.jsx
+--- a/src/components/foundItems/FoundItemsCard.jsx	
++++ b/src/components/foundItems/FoundItemsCard.jsx	
+@@ -114,9 +114,7 @@
+                                         <h2>Date Found: {item.dateFound}</h2>
+                                         <p>{item.description}</p></div>
+                                     <div className="product-price-btn">
+-                                        <p><span>Yours?</span></p>
+-
+-                                        <button>More Info</button>
++                                         <button>More Info</button>
+ 
+                                     </div>
+                                 </div>
+Index: src/components/lostItems/AllLostItems.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.getAllcontainer {\r\n  font-family: 'Bentham';\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  display: flex;\r\n  flex-wrap:wrap;\r\n  gap: 20px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n}    \r\n\r\n.wrapper {\r\n  height: 420px;\r\n  width: 600px;\r\n  margin: 10px auto;\r\n  border-radius: 7px 7px 7px 7px;\r\n  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);\r\n}\r\n\r\n.product-img {\r\n  float: left;\r\n  height: 420px;\r\n  width: 300px;\r\n}\r\n\r\n.product-img img {\r\n  border-radius: 7px 0 0 7px;\r\n}\r\n\r\n.product-info {\r\n  float: left;\r\n  height: 420px;\r\n  width: 300px;\r\n  border-radius: 0 7px 10px 7px;\r\n  background-color: #ffffff;\r\n}\r\n  \r\n.product-text {\r\n  height: 300px;\r\n  width: 327px;\r\n}\r\n\r\n.product-text h1 {\r\n  margin: 0 0 0 38px;\r\n  padding-top: 52px;\r\n  font-size: 34px;\r\n  color: #474747;\r\n}\r\n\r\n.product-text h1,\r\n.product-price-btn p {\r\n  font-family: 'Bentham', serif;\r\n}\r\n\r\n.product-text h2 {\r\n  margin: 0 0 47px 38px;\r\n  font-size: 13px;\r\n  font-family: 'Raleway', sans-serif;\r\n  font-weight: 400;\r\n  text-transform: uppercase;\r\n  color: #d2d2d2;\r\n  letter-spacing: 0.2em;\r\n}\r\n\r\n.product-text p {\r\n  height: 125px;\r\n  margin: 0 0 0 38px;\r\n  font-family: 'Playfair Display', serif;\r\n  color: #8d8d8d;\r\n  line-height: 1.7em;\r\n  font-size: 15px;\r\n  font-weight: lighter;\r\n  overflow: hidden;\r\n}\r\n\r\n.product-price-btn {\r\n  height: 103px;\r\n  width: 327px;\r\n  margin-top: 17px;\r\n  position: relative;\r\n}\r\n\r\n.product-price-btn p {\r\n  display: inline-block;\r\n  position: absolute;\r\n  top: -13px;\r\n  height: 50px;\r\n  font-family: 'Trocchi', serif;\r\n  margin: 0 0 0 38px;\r\n  font-size: 28px;\r\n  font-weight: lighter;\r\n  color: #474747;\r\n}\r\n\r\nspan {\r\n  display: inline-block;\r\n  height: 50px;\r\n  font-family: 'Suranna', serif;\r\n  font-size: 34px;\r\n}\r\n\r\n.product-price-btn button {\r\n  float: right;\r\n  display: inline-block;\r\n  height: 50px;\r\n  width: 176px;\r\n  margin: 0 40px 0 16px;\r\n  box-sizing: border-box;\r\n  border: transparent;\r\n  border-radius: 60px;\r\n  font-family: 'Raleway', sans-serif;\r\n  font-size: 14px;\r\n  font-weight: 500;\r\n  text-transform: uppercase;\r\n  letter-spacing: 0.2em;\r\n  color: #ffffff;\r\n  background-color: #9cebd5;\r\n  cursor: pointer;\r\n  outline: none;\r\n}\r\n\r\n.product-price-btn button:hover {\r\n  background-color: #79b0a1;\r\n}\r\n\r\n.p-card {\r\n      background-color: #B2D2CA;\r\n      padding: 15px;\r\n}\r\n\r\n.search-input {\r\n  width: 700px;\r\n  height: 50px;\r\n  font-size: 20px;\r\n  border-radius: 7px;\r\n  float:right;\r\n  margin-right: 20px;\r\n}\r\n\r\n
+===================================================================
+diff --git a/src/components/lostItems/AllLostItems.css b/src/components/lostItems/AllLostItems.css
+--- a/src/components/lostItems/AllLostItems.css	
++++ b/src/components/lostItems/AllLostItems.css	
+@@ -8,7 +8,7 @@
+   flex-wrap:wrap;
+   gap: 20px;
+   display: flex;
+-  justify-content: space-between;
++  justify-content: center;
+ }    
+ 
+ .wrapper {
+@@ -46,7 +46,7 @@
+   margin: 0 0 0 38px;
+   padding-top: 52px;
+   font-size: 34px;
+-  color: #474747;
++  color: rgba(0, 0, 0, 0.678);
+ }
+ 
+ .product-text h1,
+@@ -60,7 +60,7 @@
+   font-family: 'Raleway', sans-serif;
+   font-weight: 400;
+   text-transform: uppercase;
+-  color: #d2d2d2;
++  color: rgba(0, 0, 0, 0.678);
+   letter-spacing: 0.2em;
+ }
+ 
+@@ -68,7 +68,7 @@
+   height: 125px;
+   margin: 0 0 0 38px;
+   font-family: 'Playfair Display', serif;
+-  color: #8d8d8d;
++  color: rgba(0, 0, 0, 0.678);
+   line-height: 1.7em;
+   font-size: 15px;
+   font-weight: lighter;

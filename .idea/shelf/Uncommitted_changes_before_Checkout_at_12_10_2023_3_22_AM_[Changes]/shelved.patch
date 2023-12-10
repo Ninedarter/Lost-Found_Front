@@ -1,0 +1,1096 @@
+Index: src/index.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body {\r\n    margin: 0 !important;\r\n    padding: 0 !important;\r\n    background-color: #B2D2CA;\r\n    height: 100vh;\r\n    width: 100vw;\r\n}\r\n\r\n.p-menuitem-text {\r\n    font-size: 25px;\r\n\r\n}\r\n\r\n.p-button {\r\n    background-color: #A1C9C0;\r\n    border: white;\r\n    font-size: 10px;\r\n    height: 45px;\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/index.css b/src/index.css
+--- a/src/index.css	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/index.css	(date 1702072623779)
+@@ -1,20 +1,20 @@
+ body {
+     margin: 0 !important;
+     padding: 0 !important;
+-    background-color: #B2D2CA;
++    background-color: white;
+     height: 100vh;
+     width: 100vw;
+ }
+ 
+ .p-menuitem-text {
+     font-size: 25px;
+-
+ }
+ 
+ .p-button {
+-    background-color: #A1C9C0;
++    background-color: rgba(0, 0, 0, 0.841);
+     border: white;
+     font-size: 10px;
+-    height: 45px;
++    height: 30px;
++    color: white;
++}
+ 
+-}
+\ No newline at end of file
+Index: src/App.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.main-window {\r\n    margin: 0;\r\n    padding: 0;\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    flex-direction: column;\r\n    padding-top: 20px;\r\n    height: 100vh;\r\n    width: 100vw;\r\n}\r\n\r\n@media only screen and (max-width: 600px) {\r\n    .main-window {\r\n        width: 100%;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.css b/src/App.css
+--- a/src/App.css	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/App.css	(date 1702076924447)
+@@ -1,12 +1,12 @@
+ .main-window {
+     margin: 0;
+-    padding: 0;
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+-    padding-top: 20px;
+-    height: 100vh;
++    height:auto;
+     width: 100vw;
++    background-color: rgb(221, 219, 219);
++    border: unset !important;
+ }
+ 
+ @media only screen and (max-width: 600px) {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6d4753eb-9cd9-486b-bd15-221621c94554\" name=\"Changes\" comment=\"Fixed banned and logout token remove.\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/admin/panel/reportedPlayers/ReportedPlayersAdmin.jsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/admin/panel/reportedPlayers/ReportedPlayersAdmin.jsx\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/user/InfoWindow/UserInfoWindow.jsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/user/InfoWindow/UserInfoWindow.jsx\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2YquivEReO7H5Rq8V4MCRqWFOn7\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"last_opened_file_path\": \"C:/Users/Eridas/Desktop/Lost-Found_front\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"ts.external.directory.path\": \"C:\\\\Program Files\\\\JetBrains\\\\WebStorm 2023.2.3\\\\plugins\\\\javascript-impl\\\\jsLanguageServicesImpl\\\\external\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\motie\\Desktop\\LostAndFound\\Lost-Found_Front\\src\\components\\foundItems\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\motie\\Desktop\\LostAndFound\\Lost-Found_Front\\src\\components\\items\" />\r\n      <recent name=\"C:\\Users\\motie\\Desktop\\LostAndFound\\Lost-Found_Front\\src\\components\\user\\InfoWindow\" />\r\n      <recent name=\"C:\\Users\\motie\\Desktop\\LostAndFound\\Lost-Found_Front\\src\" />\r\n      <recent name=\"C:\\Users\\motie\\Desktop\\LostAndFound\\Lost-Found_Front\\src\\components\\map\" />\r\n      <recent name=\"C:\\Users\\motie\\Desktop\\LostAndFound\\Lost-Found_Front\\src\\components\\foundItems\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6d4753eb-9cd9-486b-bd15-221621c94554\" name=\"Changes\" comment=\"\" />\r\n      <created>1701265561270</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1701265561270</updated>\r\n      <workItem from=\"1701333972897\" duration=\"20318000\" />\r\n      <workItem from=\"1701937179489\" duration=\"12819000\" />\r\n      <workItem from=\"1702033168679\" duration=\"4452000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Wrong endpoint name\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701686657741</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701686657741</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Fixed possible token error.\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701865129502</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701865129502</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Safe keep\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701963857052</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701963857052</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Fixed banned and logout token remove.\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701964587376</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701964587376</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"main\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"Wrong endpoint name\" />\r\n    <MESSAGE value=\"Fully finished registration/login validation. Finished Lost/Found item admin get and remove.\" />\r\n    <MESSAGE value=\"Fixed possible token error.\" />\r\n    <MESSAGE value=\"Safe keep\" />\r\n    <MESSAGE value=\"Fixed banned and logout token remove.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Fixed banned and logout token remove.\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/.idea/workspace.xml	(date 1702155391122)
+@@ -4,10 +4,26 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="6d4753eb-9cd9-486b-bd15-221621c94554" name="Changes" comment="Fixed banned and logout token remove.">
++    <list default="true" id="6d4753eb-9cd9-486b-bd15-221621c94554" name="Changes" comment="Fixed possible token error.">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/admin/panel/reportedPlayers/ReportedPlayersAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/panel/reportedPlayers/ReportedPlayersAdmin.jsx" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/user/InfoWindow/UserInfoWindow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/InfoWindow/UserInfoWindow.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemAddForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemAddForm.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemAddForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemAddForm.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemsCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemsCard.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemsCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/foundItems/FoundItemsCard.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/items/lostItems/AllLostItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/lostItems/AllLostItems.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/items/lostItems/AllLostItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/lostItems/AllLostItems.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/items/lostItems/LostItemAddForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/lostItems/LostItemAddForm.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/items/lostItems/LostItemAddForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/lostItems/LostItemAddForm.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/login/LoginForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/LoginForm.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/login/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/LoginForm.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Main.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavigationBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/NavigationBar.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/register/RegisterForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register/RegisterForm.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/register/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register/RegisterForm.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/user/panel/UserPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/panel/UserPanel.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -15,11 +31,6 @@
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+   <component name="Git.Settings">
+-    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-      <map>
+-        <entry key="$PROJECT_DIR$" value="main" />
+-      </map>
+-    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+@@ -36,33 +47,33 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ASKED_ADD_EXTERNAL_FILES": "true",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "git-widget-placeholder": "main",
+-    "last_opened_file_path": "C:/Users/Eridas/Desktop/Lost-Found_front",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;Forms&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/Eridas/Desktop/Lost-Found_front&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\foundItems" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
+-      <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\items" />
+       <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\user\InfoWindow" />
+       <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src" />
+       <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\map" />
+       <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\foundItems" />
++      <recent name="C:\Users\motie\Desktop\LostAndFound\Lost-Found_Front\src\components\lostItems" />
+     </key>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+@@ -75,7 +86,6 @@
+       <updated>1701265561270</updated>
+       <workItem from="1701333972897" duration="20318000" />
+       <workItem from="1701937179489" duration="12819000" />
+-      <workItem from="1702033168679" duration="4452000" />
+     </task>
+     <task id="LOCAL-00001" summary="Wrong endpoint name">
+       <option name="closed" value="true" />
+@@ -93,23 +103,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1701865129502</updated>
+     </task>
+-    <task id="LOCAL-00003" summary="Safe keep">
+-      <option name="closed" value="true" />
+-      <created>1701963857052</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1701963857052</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="Fixed banned and logout token remove.">
+-      <option name="closed" value="true" />
+-      <created>1701964587376</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1701964587376</updated>
+-    </task>
+-    <option name="localTasksCounter" value="5" />
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -143,8 +137,6 @@
+     <MESSAGE value="Wrong endpoint name" />
+     <MESSAGE value="Fully finished registration/login validation. Finished Lost/Found item admin get and remove." />
+     <MESSAGE value="Fixed possible token error." />
+-    <MESSAGE value="Safe keep" />
+-    <MESSAGE value="Fixed banned and logout token remove." />
+-    <option name="LAST_COMMIT_MESSAGE" value="Fixed banned and logout token remove." />
++    <option name="LAST_COMMIT_MESSAGE" value="Fixed possible token error." />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/components/admin/panel/AdminMainPanel.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport {Link} from \"react-router-dom\";\r\nimport {Card} from \"primereact/card\";\r\n\r\nconst AdminMainPanel = () => {\r\n\r\n    return (\r\n        <Card title={\"Admin Panel\"}>\r\n            <ul>\r\n                <li style={{fontSize: \"18px\"}}>\r\n                    <Link style={{color:\"#6c6c6c\"}} to={\"../found-items\"}>Found Items</Link>\r\n                </li>\r\n                <li style={{fontSize: \"18px\"}}>\r\n                    <Link style={{color:\"#6c6c6c\"}} to={\"../lost-items\"}>Lost Items</Link>\r\n                </li>\r\n                <li style={{fontSize: \"18px\"}}>\r\n                    <Link style={{color:\"#6c6c6c\"}} to={\"../reported-users\"}>Reported Users</Link>\r\n                </li>\r\n            </ul>\r\n        </Card>\r\n    );\r\n};\r\n\r\nexport default AdminMainPanel;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/admin/panel/AdminMainPanel.jsx b/src/components/admin/panel/AdminMainPanel.jsx
+--- a/src/components/admin/panel/AdminMainPanel.jsx	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/admin/panel/AdminMainPanel.jsx	(date 1702171032669)
+@@ -5,19 +5,22 @@
+ const AdminMainPanel = () => {
+ 
+     return (
+-        <Card title={"Admin Panel"}>
+-            <ul>
+-                <li style={{fontSize: "18px"}}>
+-                    <Link style={{color:"#6c6c6c"}} to={"../found-items"}>Found Items</Link>
+-                </li>
+-                <li style={{fontSize: "18px"}}>
+-                    <Link style={{color:"#6c6c6c"}} to={"../lost-items"}>Lost Items</Link>
+-                </li>
+-                <li style={{fontSize: "18px"}}>
+-                    <Link style={{color:"#6c6c6c"}} to={"../reported-users"}>Reported Users</Link>
+-                </li>
+-            </ul>
+-        </Card>
++        <div>
++             <img src="https://moneydoneright.com/wp-content/uploads/lost-wallet-1500x370.jpg" style={{width:"100vw", height:"250px", margin:"0", padding:"0"}}></img>
++            <Card title={"Admin Panel"}>
++                <ul>
++                    <li style={{fontSize: "18px"}}>
++                        <Link style={{color:"#6c6c6c"}} to={"../found-items"}>Found Items</Link>
++                    </li>
++                    <li style={{fontSize: "18px"}}>
++                        <Link style={{color:"#6c6c6c"}} to={"../lost-items"}>Lost Items</Link>
++                    </li>
++                    <li style={{fontSize: "18px"}}>
++                        <Link style={{color:"#6c6c6c"}} to={"../reported-users"}>Reported Users</Link>
++                    </li>
++                </ul>
++            </Card>
++        </div>
+     );
+ };
+ 
+Index: src/components/items/lostItems/LostItemAddForm.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useState, useEffect} from 'react';\r\nimport {InputText} from \"primereact/inputtext\";\r\nimport {Button} from \"primereact/button\";\r\nimport {InputLabel} from '@mui/material'\r\nimport \"./LostItemAddForm.css\";\r\nimport {Calendar} from \"primereact/calendar\";\r\nimport axiosInstance from \"../../../api/customAxios\";\r\nimport {toast} from \"react-toastify\";\r\nimport MapWithMarker from '../../map/MapWithMarker';\r\nimport {InputTextarea} from \"primereact/inputtextarea\";\r\n\r\nconst LostItemAddForm = () => {\r\n    const [title, setTitle] = useState('');\r\n    const [category, setCategory] = useState('');\r\n    const [categories, setCategories] = useState([]);\r\n    const [dateFound, setDateFound] = useState('');\r\n    const [description, setDescription] = useState('');\r\n    const [reward, setReward] = useState('');\r\n    const [longitude, setLongitude] = useState(0.0);\r\n    const [latitude, setLatitude] = useState(0.0);\r\n\r\n    const [restartValue, setRestartValue] = useState(1)\r\n\r\n    const [submitted, setSubmitted] = useState(false)\r\n\r\n    const getCategories = () => {\r\n        axiosInstance.get(\"/api/v1/categories/all\")\r\n            .then((response) => {\r\n                setCategories(response.data)\r\n                console.log(response.data)\r\n            })\r\n    }\r\n\r\n    useEffect(() => {\r\n        getCategories()\r\n    }, []);\r\n\r\n\r\n    const upadateSelectCategory = e => {\r\n        setCategory(e.target.value);\r\n    };\r\n\r\n\r\n    const handleSubmit = () => {\r\n        setSubmitted(true)\r\n\r\n        if(title.length<4) {\r\n            toast.warning(\"Title too short. Min. 4\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(title.length>50) {\r\n            toast.warning(\"Title too long. Max. 4\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(description.length<4) {\r\n            toast.warning(\"Description too short. Min. 4\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(category.length===0) {\r\n            toast.warning(\"You have not picked category\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(dateFound.length===0) {\r\n            toast.warning(\"You have not picked lost date\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(latitude === 0.0 && longitude === 0.0) {\r\n            toast.warning(\"You have not picked location\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        axiosInstance.post('/api/v1/lostItem/add-new', {\r\n            title: title,\r\n            category: category,\r\n            dateLost: dateFound.toISOString().substring(0, 10),\r\n            description: description,\r\n            coordinates: {\r\n                longitude: longitude,\r\n                latitude:latitude,\r\n            },\r\n            reward: reward\r\n        })\r\n            .then((response) => {\r\n                toast.success(\"Item added successfully\")\r\n                setTitle('');\r\n                setCategory('');\r\n                setDateFound('');\r\n                setDescription('');\r\n                setLongitude(0.0);\r\n                setLatitude(0.0);\r\n                setReward('');\r\n                setSubmitted(false)\r\n                setRestartValue(val=> val+1)\r\n            })\r\n            .catch(er => {\r\n                toast.error(er.message)\r\n                setSubmitted(false)\r\n            })\r\n    };\r\n\r\n    return (\r\n        <div className={\"foundItemAdd-form-main\"}>\r\n\r\n                <span className=\"p-float-label\">\r\n                    <InputText id=\"title\"\r\n                               value={title}\r\n                               onChange={(e) => setTitle(e.target.value)}\r\n                               style={{width: \"100%\"}}\r\n                    />\r\n                    <label htmlFor=\"title\">Title</label>\r\n                </span>\r\n\r\n            <span className=\"p-float-label\">\r\n                    <InputTextarea id=\"description\"\r\n                                   value={description}\r\n                                   onChange={(e) => setDescription(e.target.value)}\r\n                    />\r\n                    <label htmlFor=\"description\">Description</label>\r\n                </span>\r\n\r\n            <span>\r\n                  <select onChange={upadateSelectCategory} value={category} style={{width: \"100%\"}}>\r\n                      <option value=\"\">-- Category --</option>\r\n                      {categories.map((item, index) => (\r\n                          <option key={item}>{item}</option>))}\r\n                  </select>\r\n                </span>\r\n\r\n            <span className=\"p-float-label\">\r\n                   <Calendar value={dateFound}\r\n                             id={\"calendar\"}\r\n                             onChange={(e) => setDateFound(e.value)}\r\n                             placeholder={\"Date Found\"}\r\n                             style={{width: \"100%\"}}\r\n\r\n                   />\r\n                    <label htmlFor=\"calendar\">Date</label>\r\n                </span>\r\n\r\n            <InputLabel\r\n                style={{color: \"black\"}}>\r\n                Where did you found item? (Double click)\r\n            </InputLabel>\r\n\r\n            <MapWithMarker\r\n                coordinates={(coordinates) => {\r\n                    setLatitude(coordinates.lat)\r\n                    setLongitude(coordinates.lng)\r\n                }}\r\n                restart={restartValue}\r\n            ></MapWithMarker>\r\n\r\n            <span className=\"p-float-label\">\r\n                    <InputText id=\"reward\"\r\n                               value={reward}\r\n                               onChange={(e) => setReward(e.target.value)}\r\n                               style={{width: \"100%\"}}\r\n                    />\r\n                    <label htmlFor=\"reward\">Reward</label>\r\n                </span>\r\n\r\n            <Button label=\"Submit\"\r\n                    onClick={(e) => handleSubmit(e)}\r\n                    disabled={submitted}\r\n            />\r\n        </div>\r\n    )\r\n\r\n}\r\n\r\n\r\nexport default LostItemAddForm
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/items/lostItems/LostItemAddForm.jsx b/src/components/items/lostItems/LostItemAddForm.jsx
+--- a/src/components/items/lostItems/LostItemAddForm.jsx	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/items/lostItems/LostItemAddForm.jsx	(date 1702068854660)
+@@ -1,6 +1,6 @@
+ import React, {useState, useEffect} from 'react';
+ import {InputText} from "primereact/inputtext";
+-import {Button} from "primereact/button";
++import { Button } from 'primereact/button';
+ import {InputLabel} from '@mui/material'
+ import "./LostItemAddForm.css";
+ import {Calendar} from "primereact/calendar";
+@@ -130,7 +130,7 @@
+                 </span>
+ 
+             <span>
+-                  <select onChange={upadateSelectCategory} value={category} style={{width: "100%"}}>
++                  <select className='select-category' onChange={upadateSelectCategory} value={category} style={{width: "100%"}}>
+                       <option value="">-- Category --</option>
+                       {categories.map((item, index) => (
+                           <option key={item}>{item}</option>))}
+@@ -160,21 +160,22 @@
+                 }}
+                 restart={restartValue}
+             ></MapWithMarker>
+-
+-            <span className="p-float-label">
+-                    <InputText id="reward"
+-                               value={reward}
+-                               onChange={(e) => setReward(e.target.value)}
+-                               style={{width: "100%"}}
+-                    />
+-                    <label htmlFor="reward">Reward</label>
+-                </span>
++            
++                <span className="p-float-label">
++                        <InputText id="reward"
++                                value={reward}
++                                onChange={(e) => setReward(e.target.value)}
++                                style={{width: "100%"}}
++                        />
++                        <label htmlFor="reward">Reward</label>
++                    </span>
+ 
+-            <Button label="Submit"
+-                    onClick={(e) => handleSubmit(e)}
+-                    disabled={submitted}
+-            />
+-        </div>
++                <Button label="Submit"
++                        onClick={(e) => handleSubmit(e)}
++                        disabled={submitted}
++                />
++            </div>
++        
+     )
+ 
+ }
+Index: src/components/main/Main.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport MainMap from '../map/MainMap';\r\n\r\nconst Main = () => {\r\n    return (\r\n        <div>\r\n            <MainMap/>\r\n        </div>\r\n        \r\n    );\r\n};\r\n\r\nexport default Main;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/main/Main.jsx b/src/components/main/Main.jsx
+--- a/src/components/main/Main.jsx	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/main/Main.jsx	(date 1702061488846)
+@@ -4,6 +4,9 @@
+ const Main = () => {
+     return (
+         <div>
++            <div className='MainHeader' style={{background:"black", color:"white", fontSize:"25px", height:"60px", display:"flex", flexWrap:"wrap", flexDirection:"row", justifyContent:"center", alignItems:"center"}}>
++                Lost & Found Map - All Lost & Found Items in one place!
++            </div>
+             <MainMap/>
+         </div>
+         
+Index: src/components/items/lostItems/LostItemAddForm.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.getAllcontainer {\r\n    font-family: 'Bentham';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    display: flex;\r\n    flex-wrap:wrap;\r\n    gap: 20px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.wrapper {\r\n    height: 420px;\r\n    width: 600px;\r\n    margin: 10px auto;\r\n    border-radius: 7px 7px 7px 7px;\r\n    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);\r\n}\r\n\r\n.product-img {\r\n    float: left;\r\n    height: 420px;\r\n    width: 300px;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.product-img img {\r\n    border-radius: 7px 0 0 7px;\r\n}\r\n\r\n.product-info {\r\n    float: left;\r\n    height: 420px;\r\n    width: 300px;\r\n    border-radius: 0 7px 10px 7px;\r\n    background-color: #ffffff;\r\n}\r\n\r\n.product-text {\r\n    height: 300px;\r\n    width: 327px;\r\n}\r\n\r\n.product-text h1 {\r\n    margin: 0 0 0 38px;\r\n    padding-top: 52px;\r\n    font-size: 34px;\r\n    color: #474747;\r\n}\r\n\r\n.product-text h1,\r\n.product-price-btn p {\r\n    font-family: 'Bentham', serif;\r\n}\r\n\r\n.product-text h2 {\r\n    margin: 0 0 47px 38px;\r\n    font-size: 13px;\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 400;\r\n    text-transform: uppercase;\r\n    color: #d2d2d2;\r\n    letter-spacing: 0.2em;\r\n}\r\n\r\n.product-text p {\r\n    height: 125px;\r\n    margin: 0 0 0 38px;\r\n    font-family: 'Playfair Display', serif;\r\n    color: #8d8d8d;\r\n    line-height: 1.7em;\r\n    font-size: 15px;\r\n    font-weight: lighter;\r\n    overflow: hidden;\r\n}\r\n\r\n.product-price-btn {\r\n    height: 103px;\r\n    width: 327px;\r\n    margin-top: 17px;\r\n    position: relative;\r\n}\r\n\r\n.product-price-btn p {\r\n    display: inline-block;\r\n    position: absolute;\r\n    top: -13px;\r\n    height: 50px;\r\n    font-family: 'Trocchi', serif;\r\n    margin: 0 0 0 38px;\r\n    font-size: 28px;\r\n    font-weight: lighter;\r\n    color: #474747;\r\n}\r\n\r\nspan {\r\n    display: inline-block;\r\n    height: 50px;\r\n    font-family: 'Suranna', serif;\r\n    font-size: 34px;\r\n}\r\n\r\n.product-price-btn button {\r\n    float: right;\r\n    display: inline-block;\r\n    height: 50px;\r\n    width: 176px;\r\n    margin: 0 40px 0 16px;\r\n    box-sizing: border-box;\r\n    border: transparent;\r\n    border-radius: 60px;\r\n    font-family: 'Raleway', sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    text-transform: uppercase;\r\n    letter-spacing: 0.2em;\r\n    color: #ffffff;\r\n    background-color: #9cebd5;\r\n    cursor: pointer;\r\n    outline: none;\r\n}\r\n\r\n.product-price-btn button:hover {\r\n    background-color: #79b0a1;\r\n}\r\n\r\n.p-card {\r\n    background-color: #B2D2CA;\r\n    padding: 15px;\r\n}\r\n\r\n.search-input {\r\n    width: 30%;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    border-radius: 7px;\r\n    float:right;\r\n    margin-right: 20px;\r\n}\r\n\r\n.custom-select {\r\n    width: 30%;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    border-radius: 7px;\r\n    float:right;\r\n    margin-right: 20px;\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/items/lostItems/LostItemAddForm.css b/src/components/items/lostItems/LostItemAddForm.css
+--- a/src/components/items/lostItems/LostItemAddForm.css	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/items/lostItems/LostItemAddForm.css	(date 1702160152182)
+@@ -48,7 +48,7 @@
+     margin: 0 0 0 38px;
+     padding-top: 52px;
+     font-size: 34px;
+-    color: #474747;
++    color: rgba(0, 0, 0, 0.678);
+ }
+ 
+ .product-text h1,
+@@ -62,7 +62,7 @@
+     font-family: 'Raleway', sans-serif;
+     font-weight: 400;
+     text-transform: uppercase;
+-    color: #d2d2d2;
++    color: rgba(0, 0, 0, 0.678);
+     letter-spacing: 0.2em;
+ }
+ 
+@@ -70,7 +70,7 @@
+     height: 125px;
+     margin: 0 0 0 38px;
+     font-family: 'Playfair Display', serif;
+-    color: #8d8d8d;
++    color: rgba(0, 0, 0, 0.678);
+     line-height: 1.7em;
+     font-size: 15px;
+     font-weight: lighter;
+@@ -100,7 +100,8 @@
+     display: inline-block;
+     height: 50px;
+     font-family: 'Suranna', serif;
+-    font-size: 34px;
++    font-size: 25px;
++    color: rgba(0, 0, 0, 0.678);
+ }
+ 
+ .product-price-btn button {
+@@ -124,12 +125,14 @@
+ }
+ 
+ .product-price-btn button:hover {
+-    background-color: #79b0a1;
++    background-color: #6F7386;
+ }
+ 
+ .p-card {
+-    background-color: #B2D2CA;
++    background-color: white;
+     padding: 15px;
++    font-family:Verdana, Geneva, Tahoma, sans-serif;
++
+ }
+ 
+ .search-input {
+@@ -150,3 +153,6 @@
+     margin-right: 20px;
+ }
+ 
++.p-float-label {
++    font-size: 20px;
++}
+\ No newline at end of file
+Index: src/components/user/panel/UserPanel.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useState} from 'react';\r\nimport {Card} from \"primereact/card\";\r\nimport {Dialog} from \"primereact/dialog\";\r\nimport UserInfoWindow from \"../InfoWindow/UserInfoWindow\";\r\n\r\nconst UserPanel = () => {\r\n    return (\r\n        <Card title={\"Your User Panel\"}>\r\n          <UserInfoWindow self={true}/>\r\n        </Card>\r\n    );\r\n};\r\n\r\nexport default UserPanel;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/user/panel/UserPanel.jsx b/src/components/user/panel/UserPanel.jsx
+--- a/src/components/user/panel/UserPanel.jsx	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/user/panel/UserPanel.jsx	(date 1702170828636)
+@@ -5,9 +5,14 @@
+ 
+ const UserPanel = () => {
+     return (
+-        <Card title={"Your User Panel"}>
+-          <UserInfoWindow self={true}/>
+-        </Card>
++      <div className="userpanel">
++        <div>
++        <img src="https://moneydoneright.com/wp-content/uploads/lost-wallet-1500x370.jpg" style={{width:"100vw", height:"250px", margin:"0", padding:"0"}}></img>
++          <Card title={"Your User Panel"}>
++            <UserInfoWindow self={true}/>
++          </Card>
++          </div>
++        </div>
+     );
+ };
+ 
+Index: src/components/items/lostItems/AllLostItems.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.getAllcontainer {\r\n  font-family: 'Bentham';\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  display: flex;\r\n  flex-wrap:wrap;\r\n  gap: 20px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n}    \r\n\r\n.wrapper {\r\n  height: 420px;\r\n  width: 600px;\r\n  margin: 10px auto;\r\n  border-radius: 7px 7px 7px 7px;\r\n  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);\r\n}\r\n\r\n.product-img {\r\n  float: left;\r\n  height: 420px;\r\n  width: 300px;\r\n}\r\n\r\n.product-img img {\r\n  border-radius: 7px 0 0 7px;\r\n}\r\n\r\n.product-info {\r\n  float: left;\r\n  height: 420px;\r\n  width: 300px;\r\n  border-radius: 0 7px 10px 7px;\r\n  background-color: #ffffff;\r\n}\r\n  \r\n.product-text {\r\n  height: 300px;\r\n  width: 327px;\r\n}\r\n\r\n.product-text h1 {\r\n  margin: 0 0 0 38px;\r\n  padding-top: 52px;\r\n  font-size: 34px;\r\n  color: #474747;\r\n}\r\n\r\n.product-text h1,\r\n.product-price-btn p {\r\n  font-family: 'Bentham', serif;\r\n}\r\n\r\n.product-text h2 {\r\n  margin: 0 0 47px 38px;\r\n  font-size: 13px;\r\n  font-family: 'Raleway', sans-serif;\r\n  font-weight: 400;\r\n  text-transform: uppercase;\r\n  color: #d2d2d2;\r\n  letter-spacing: 0.2em;\r\n}\r\n\r\n.product-text p {\r\n  height: 125px;\r\n  margin: 0 0 0 38px;\r\n  font-family: 'Playfair Display', serif;\r\n  color: #8d8d8d;\r\n  line-height: 1.7em;\r\n  font-size: 15px;\r\n  font-weight: lighter;\r\n  overflow: hidden;\r\n}\r\n\r\n.product-price-btn {\r\n  height: 103px;\r\n  width: 327px;\r\n  margin-top: 17px;\r\n  position: relative;\r\n}\r\n\r\n.product-price-btn p {\r\n  display: inline-block;\r\n  position: absolute;\r\n  top: -13px;\r\n  height: 50px;\r\n  font-family: 'Trocchi', serif;\r\n  margin: 0 0 0 38px;\r\n  font-size: 28px;\r\n  font-weight: lighter;\r\n  color: #474747;\r\n}\r\n\r\nspan {\r\n  display: inline-block;\r\n  height: 50px;\r\n  font-family: 'Suranna', serif;\r\n  font-size: 34px;\r\n}\r\n\r\n.product-price-btn button {\r\n  float: right;\r\n  display: inline-block;\r\n  height: 50px;\r\n  width: 176px;\r\n  margin: 0 40px 0 16px;\r\n  box-sizing: border-box;\r\n  border: transparent;\r\n  border-radius: 60px;\r\n  font-family: 'Raleway', sans-serif;\r\n  font-size: 14px;\r\n  font-weight: 500;\r\n  text-transform: uppercase;\r\n  letter-spacing: 0.2em;\r\n  color: #ffffff;\r\n  background-color: #9cebd5;\r\n  cursor: pointer;\r\n  outline: none;\r\n}\r\n\r\n.product-price-btn button:hover {\r\n  background-color: #79b0a1;\r\n}\r\n\r\n.p-card {\r\n      background-color: #B2D2CA;\r\n      padding: 15px;\r\n}\r\n\r\n.search-input {\r\n  width: 700px;\r\n  height: 50px;\r\n  font-size: 20px;\r\n  border-radius: 7px;\r\n  float:right;\r\n  margin-right: 20px;\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/items/lostItems/AllLostItems.css b/src/components/items/lostItems/AllLostItems.css
+--- a/src/components/items/lostItems/AllLostItems.css	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/items/lostItems/AllLostItems.css	(date 1702170207594)
+@@ -46,7 +46,7 @@
+   margin: 0 0 0 38px;
+   padding-top: 52px;
+   font-size: 34px;
+-  color: #474747;
++  color: black;
+ }
+ 
+ .product-text h1,
+@@ -60,7 +60,7 @@
+   font-family: 'Raleway', sans-serif;
+   font-weight: 400;
+   text-transform: uppercase;
+-  color: #d2d2d2;
++  color: black;
+   letter-spacing: 0.2em;
+ }
+ 
+@@ -68,7 +68,7 @@
+   height: 125px;
+   margin: 0 0 0 38px;
+   font-family: 'Playfair Display', serif;
+-  color: #8d8d8d;
++  color: black;
+   line-height: 1.7em;
+   font-size: 15px;
+   font-weight: lighter;
+@@ -91,14 +91,13 @@
+   margin: 0 0 0 38px;
+   font-size: 28px;
+   font-weight: lighter;
+-  color: #474747;
++  color: #474747ae;
+ }
+ 
+ span {
+   display: inline-block;
+   height: 50px;
+   font-family: 'Suranna', serif;
+-  font-size: 34px;
+ }
+ 
+ .product-price-btn button {
+@@ -116,18 +115,18 @@
+   text-transform: uppercase;
+   letter-spacing: 0.2em;
+   color: #ffffff;
+-  background-color: #9cebd5;
++  background-color: #79b0a1;
+   cursor: pointer;
+   outline: none;
+ }
+ 
+ .product-price-btn button:hover {
+-  background-color: #79b0a1;
++  background-color: #6F7386;
+ }
+ 
+ .p-card {
+-      background-color: #B2D2CA;
+-      padding: 15px;
++  background-color: rgba(255, 255, 255, 0.975);
++  padding: 15px;
+ }
+ 
+ .search-input {
+Index: src/components/items/lostItems/AllLostItems.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useEffect, useState} from 'react';\r\nimport axiosInstance from \"../../../api/customAxios\";\r\nimport { Card } from 'react-bootstrap';\r\nimport styles from './AllLostItems.css'\r\n\r\nconst AllLostItems = () => {\r\n  const [error, setError] = useState(null);\r\n  const [isLoaded, setIsLoaded] = useState(false);\r\n  const [lostItems, setLostItems] = useState([]);\r\n  const [q, setQ] = useState(\"\");\r\n  const [searchParam] = useState([\"title\", \"category\", \"dateLost\", \"description\"]);\r\n  const [filterParam, setFilterParam] = useState([\"All\"]);\r\n\r\n    useEffect(() => {\r\n        axiosInstance.get(\"/api/v1/lostItem/all\")\r\n            .then((response) => {\r\n                setIsLoaded(true);\r\n                setLostItems(response.data)\r\n            },(error) => {\r\n              setIsLoaded(true);\r\n              setError(error);\r\n          }\r\n        );\r\n    }, []);\r\n\r\n  \r\n    function search(items) {\r\n    return items.filter((item) => {\r\n      if (item.category == filterParam) {\r\n        return searchParam.some((newItem) => {\r\n          return (\r\n              item[newItem]\r\n                  .toString()\r\n                  .toLowerCase()\r\n                  .indexOf(q.toLowerCase()) > -1\r\n                );\r\n            });\r\n            } else if (filterParam == \"All\") {\r\n              return searchParam.some((newItem) => {\r\n                  return (\r\n                      item[newItem]\r\n                          .toString()\r\n                          .toLowerCase()\r\n                          .indexOf(q.toLowerCase()) > -1\r\n                          );  \r\n                        });\r\n                    }\r\n                });\r\n            }\r\n\r\n    if (error) {\r\n      return <>{error.message}</>;\r\n  } else if (!isLoaded) {\r\n      return <>loading...</>;\r\n  } else {\r\n  return (  \r\n<div>\r\n    <div className=\"search-wrapper\">\r\n                        <label htmlFor=\"search-form\">\r\n                            <input\r\n                                type=\"search\"\r\n                                name=\"search-form\"\r\n                                id=\"search-form\"\r\n                                className=\"search-input\"\r\n                                placeholder=\"Search...\"\r\n                                value={q}\r\n                                onChange={(e) => setQ(e.target.value)}\r\n                            />\r\n                            \r\n                            </label>\r\n                            <div className=\"select\">\r\n                        <select\r\n                        onChange={(e) => {\r\n                          setFilterParam(e.target.value);\r\n                      }}\r\n                      className=\"custom-select\"\r\n                      aria-label=\"Filter Items By Categories\"\r\n                  >\r\n                      <option value=\"All\">Filter By Category</option>\r\n                      <option value=\"CLOTHES\">CLOTHES</option>\r\n                      <option value=\"WALLET\">WALLET</option>\r\n                      <option value=\"PHONE\">PHONE</option>\r\n                      <option value=\"JEWELRY\">JEWELRY</option>\r\n                      <option value=\"GLASSES\">GLASSES</option>\r\n                      <option value=\"KEYS\">KEYS</option>\r\n                      <option value=\"OTHER\">OTHER</option>\r\n                  </select>\r\n                  <span className=\"focus\"></span>\r\n                    </div>\r\n                </div>\r\n\r\n                    <div className=\"getAllcontainer\">\r\n\r\n\r\n          {search(lostItems).map((item, index) => (  \r\n<Card\r\nkey={index} >\r\n    <div className=\"wrapper\">\r\n    <div className=\"product-img\">\r\n      <img src=\"https://clipground.com/images/lost-png-1.png\"  width=\"327\"/>\r\n    </div>\r\n    <div className=\"product-info\">\r\n      <div className=\"product-text\">\r\n        <h1>{item.title}</h1>\r\n        <h2>Category: {item.category}</h2>\r\n        <h2>Date Lost: {item.dateLost}</h2>\r\n        <p>{item.description}</p></div>\r\n      <div className=\"product-price-btn\">\r\n        <p><span>REWARD: {item.reward} €</span></p>\r\n        <button type=\"button\">Send message</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </Card>\r\n          ))}\r\n          </div>\r\n          </div>\r\n  );\r\n};\r\n}\r\n\r\nexport default AllLostItems
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/items/lostItems/AllLostItems.jsx b/src/components/items/lostItems/AllLostItems.jsx
+--- a/src/components/items/lostItems/AllLostItems.jsx	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/items/lostItems/AllLostItems.jsx	(date 1702169976936)
+@@ -1,9 +1,13 @@
+ import React, {useEffect, useState} from 'react';
+ import axiosInstance from "../../../api/customAxios";
+ import { Card } from 'react-bootstrap';
+-import styles from './AllLostItems.css'
++import styles from './AllLostItems.css';
++import { ProgressSpinner } from 'primereact/progressspinner';
++import { Dialog } from 'primereact/dialog';
++import { Button } from 'primereact/button';
+ 
+ const AllLostItems = () => {
++  const [selectedLost, setSelectedLost ] = useState(null);
+   const [error, setError] = useState(null);
+   const [isLoaded, setIsLoaded] = useState(false);
+   const [lostItems, setLostItems] = useState([]);
+@@ -11,18 +15,22 @@
+   const [searchParam] = useState(["title", "category", "dateLost", "description"]);
+   const [filterParam, setFilterParam] = useState(["All"]);
+ 
+-    useEffect(() => {
++    const getData = () => {
+         axiosInstance.get("/api/v1/lostItem/all")
+             .then((response) => {
+                 setIsLoaded(true);
+                 setLostItems(response.data)
+-            },(error) => {
+-              setIsLoaded(true);
+-              setError(error);
+-          }
+-        );
+-    }, []);
++            });
++    }
++
++    useEffect(() => {
++      getData()
++  }, []);
+ 
++  const onSelectLost = item => {
++      setSelectedLost(item);
++  };
++
+   
+     function search(items) {
+     return items.filter((item) => {
+@@ -51,7 +59,9 @@
+     if (error) {
+       return <>{error.message}</>;
+   } else if (!isLoaded) {
+-      return <>loading...</>;
++      return <div style={{display:"flex", justifyContent:"center", alignItems:"center", overflow: "hidden"}}>
++                  <ProgressSpinner style={{overflow:"hidden"}} />
++            </div>;
+   } else {
+   return (  
+ <div>
+@@ -93,26 +103,44 @@
+ 
+ 
+           {search(lostItems).map((item, index) => (  
+-<Card
+-key={index} >
+-    <div className="wrapper">
+-    <div className="product-img">
+-      <img src="https://clipground.com/images/lost-png-1.png"  width="327"/>
+-    </div>
+-    <div className="product-info">
+-      <div className="product-text">
+-        <h1>{item.title}</h1>
+-        <h2>Category: {item.category}</h2>
+-        <h2>Date Lost: {item.dateLost}</h2>
+-        <p>{item.description}</p></div>
+-      <div className="product-price-btn">
+-        <p><span>REWARD: {item.reward} €</span></p>
+-        <button type="button">Send message</button>
+-      </div>
+-    </div>
+-  </div>
+-  </Card>
+-          ))}
++                <Card
++                key={index} >
++                    <div className="wrapper">
++                    <div className="product-img">
++                      <img src="https://clipground.com/images/lost-png-1.png"  width="327"/>
++                    </div>
++                    <div className="product-info">
++                      <div className="product-text">
++                        <h1>{item.title}</h1>
++                        <h2>Category: {item.category}</h2>
++                        <h2>Date Lost: {item.dateLost}</h2>
++                        <p>{item.description}</p></div>
++                      <div className="product-price-btn">
++                        <p><span style={{fontSize:"24px"}}>REWARD: {item.reward}</span></p>
++                        <button onClick={() => {onSelectLost(item)}}>More info</button>
++                      </div>
++                    </div>
++                  </div>
++                  </Card>
++                ))
++            }
++            {          
++                selectedLost && (
++                        <Dialog
++                            visible={true}
++                            onHide= { () => setSelectedLost (false)}>
++                            <div>
++                                <Card>
++                                    <div className="contact-info">
++                                            <h1>Contact Info</h1>
++                                            <h2>Email: {selectedLost.user.email}</h2>
++                                            <h2>Phone: {selectedLost.user.phoneNumber}</h2>
++                                    </div>
++                                </Card>
++                            </div>
++                        </Dialog>
++                        )
++                    }
+           </div>
+           </div>
+   );
+Index: src/components/navbar/NavigationBar.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport {Link, useNavigate} from \"react-router-dom\";\r\nimport {Menubar} from \"primereact/menubar\";\r\nimport {useAuth} from \"../../provider/authProvider\";\r\nimport {jwtDecode} from \"jwt-decode\";\r\n\r\nconst NavigationBar = () => {\r\n    const navigate = useNavigate();\r\n    const {token} = useAuth()\r\n    const check = !!token && token !== \"undefined\"\r\n\r\n    const adminPermission = token && token !== \"undefined\"? jwtDecode(token, {header: false}).roles.includes(\"ROLE_ADMIN\") : false\r\n\r\n    const name = token && token !== \"undefined\"? jwtDecode(token, {header: false}).sub : \"\"\r\n\r\n    const items = [\r\n        {\r\n            label: 'Login',\r\n            icon: 'pi pi-fw pi-plus',\r\n            command: () => {\r\n                navigate('/login')\r\n            },\r\n            visible: !check\r\n\r\n        },\r\n        {\r\n            label: 'Register',\r\n            command: () => {\r\n                navigate('/register')\r\n            },\r\n            visible: !check\r\n        },\r\n        {\r\n            label: 'Admin Panel',\r\n            command: () => {\r\n                navigate('/main/admin/panel')\r\n            },\r\n            visible: check && adminPermission\r\n        },\r\n        {\r\n            label: 'Main',\r\n            command: () => {\r\n                navigate('/main/index')\r\n            },\r\n            visible: check\r\n        },\r\n\r\n        {\r\n            label: 'Found Items',\r\n            command: () => {\r\n                navigate('/main/found-items')\r\n            },\r\n            visible: check\r\n        },\r\n        {\r\n            label: 'Lost Items',\r\n            command: () => {\r\n                navigate('/main/lost-items')\r\n            },\r\n            visible: check\r\n        },\r\n        {\r\n            label: 'Add Item',\r\n            command: () => {\r\n                navigate('/main/add-item')\r\n            },\r\n            visible: check\r\n        },\r\n        {\r\n            label: name,\r\n            command: () => {\r\n                navigate('/main/user-info')\r\n            },\r\n            visible: check\r\n        },\r\n        {\r\n            label: 'Logout',\r\n            command: () => {\r\n                navigate('/main/logout')\r\n            },\r\n            visible: check\r\n        }\r\n    ];\r\n\r\n    const where = check ? \"/main/index\" : \"/\"\r\n\r\n    const start = <Link to={where} style={{margin: \"5px\"}}>\r\n        <img src={\"/icona.png\"} alt={\":(\"} width={\"67px\"}/>\r\n    </Link>\r\n\r\n    return <Menubar start={start} model={items} style={{display: \"flex\", justifyContent: \"space-between\"}}/>\r\n};\r\n\r\nexport default NavigationBar;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/navbar/NavigationBar.jsx b/src/components/navbar/NavigationBar.jsx
+--- a/src/components/navbar/NavigationBar.jsx	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/navbar/NavigationBar.jsx	(date 1702061488872)
+@@ -85,10 +85,10 @@
+     const where = check ? "/main/index" : "/"
+ 
+     const start = <Link to={where} style={{margin: "5px"}}>
+-        <img src={"/icona.png"} alt={":("} width={"67px"}/>
++        <img src={"/logo.png"} alt={":("} width={"130px"}/>
+     </Link>
+ 
+-    return <Menubar start={start} model={items} style={{display: "flex", justifyContent: "space-between"}}/>
++    return <Menubar start={start} model={items} style={{backgroundcolor: "white", display: "flex", justifyContent: "space-between"}}/>
+ };
+ 
+ export default NavigationBar;
+\ No newline at end of file
+Index: src/components/register/RegisterForm.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.register-form-main {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap:25px;\r\n  padding: 20px 100px;\r\n    font-size: 15px;\r\n    border-radius: 7px 7px 7px 7px;\r\n    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);\r\n}\r\n\r\n.gender-form {\r\n  display: flex;\r\n  gap:10px;\r\n}\r\n\r\n.gender-form-inside {\r\n  display: flex;\r\n  gap:3px;\r\n}\r\n\r\n.p-card {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: center;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/register/RegisterForm.css b/src/components/register/RegisterForm.css
+--- a/src/components/register/RegisterForm.css	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/register/RegisterForm.css	(date 1702074996784)
+@@ -1,3 +1,16 @@
++.registration {
++  display: flex;
++  flex-wrap: wrap;
++  background-image: url("https://image.cnbcfm.com/api/v1/image/105111519-GettyImages-700712095.jpg?v=1532563660");
++  background-size: cover;
++  background-repeat: no-repeat;
++  width: 100%;
++  background-position-x: right;
++  background-position-y:bottom;
++  padding-top: 15px;
++  padding-bottom: 10px;
++  padding-left: 150px;
++}
+ .register-form-main {
+   display: flex;
+   flex-direction: column;
+@@ -22,4 +35,9 @@
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+-}
+\ No newline at end of file
++}
++
++.p-card .p-component {
++height: 100%;
++}
++
+Index: src/components/home/Home.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\n\r\nconst Home = () => {\r\n    return (\r\n        <div>\r\n            <h1>Lost&Found App</h1>\r\n            <p>Info about app</p>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Home;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/home/Home.jsx b/src/components/home/Home.jsx
+--- a/src/components/home/Home.jsx	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/home/Home.jsx	(date 1702157985770)
+@@ -2,9 +2,8 @@
+ 
+ const Home = () => {
+     return (
+-        <div>
+-            <h1>Lost&Found App</h1>
+-            <p>Info about app</p>
++        <div style={{height:"100vh"}}>
++            <img src="https://images.unsplash.com/photo-1626010448982-0fec79ed1979?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{width:"100vw", backgroundSize:"cover"}}></img>
+         </div>
+     );
+ };
+Index: src/components/register/RegisterForm.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useState} from 'react'\r\n\r\nimport {Card} from 'primereact/card';\r\nimport {InputText} from \"primereact/inputtext\";\r\nimport {Button} from \"primereact/button\";\r\n\r\nimport \"./RegisterForm.css\";\r\nimport {Calendar} from \"primereact/calendar\";\r\nimport {RadioButton} from \"primereact/radiobutton\";\r\nimport axiosInstance from \"../../api/customAxios\";\r\nimport {toast} from \"react-toastify\";\r\nimport {useAuth} from \"../../provider/authProvider\";\r\nimport {useNavigate} from \"react-router-dom\";\r\n\r\nconst RegisterForm = () => {\r\n    const [submitted, setSubmitted] = useState(false)\r\n    const {setToken, setRefreshToken} = useAuth();\r\n    const navigate = useNavigate();\r\n\r\n    const [name, setName] = useState(\"\")\r\n    const [lastName, setLastName] = useState(\"\")\r\n    const [email, setEmail] = useState(\"\")\r\n    const [password, setPassword] = useState(\"\")\r\n    const [password2, setPassword2] = useState(\"\")\r\n    const [dob, setDob] = useState()\r\n    const [number, setNumber] = useState(\"\")\r\n    const [gender, setGender] = useState(\"\")\r\n\r\n    const handleSubmit = async (e) => {\r\n        e.preventDefault();\r\n\r\n        setSubmitted(true)\r\n\r\n        if(name.length<4) {\r\n            toast.warning(\"First name too short. Min 4\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n        if(lastName.length<4) {\r\n            toast.warning(\"Last name too short. Min 4\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n        if(email.length<4) {\r\n            toast.warning(\"Email too short. Min 4\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n        if(password.length<4) {\r\n            toast.warning(\"Password too short. Min 4\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n        if(!!!dob) {\r\n            toast.warning(\"Please choose date of birth\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(number.length<6) {\r\n            toast.warning(\"Number too short. Min 6\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(!gender) {\r\n            toast.warning(\"Please select your gender\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(password !== password2) {\r\n            toast.warning(\"Passwords do not match\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(name.length>32) {\r\n            toast.warning(\"First name too long. Max 32\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n        if(lastName.length>32) {\r\n            toast.warning(\"Last name too long. Max 32\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n        if(email.length>32) {\r\n            toast.warning(\"Email too long. Max 32\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n        if(password.length>32) {\r\n            toast.warning(\"Password too long. Max 32\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(number.length>32) {\r\n            toast.warning(\"Number too long. Max 32\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        axiosInstance.post(\"/api/v1/auth/register\", {\r\n            \"firstname\": name,\r\n            \"lastname\": lastName,\r\n            \"email\": email,\r\n            \"password\": password,\r\n            \"dob\": dob.toISOString().substring(0,10),\r\n            \"phoneNumber\": number,\r\n            \"gender\": gender\r\n        })\r\n            .then(response => {\r\n                if(response.data.access_token && response.data.refresh_token) {\r\n                    setToken(response.data.access_token)\r\n                    setRefreshToken(response.data.refresh_token)\r\n                }\r\n                toast.success(\"Registration successful!\")\r\n                navigate(\"/main/index\")\r\n            })\r\n            .catch(error => {\r\n                setSubmitted(false)\r\n                toast.error(\"Something went wrong. Maybe email is already taken?\");\r\n                if (error.response) {\r\n                    console.error(\"Error status:\", error.response.status);\r\n                    console.error(\"Error data:\", error.response.data);\r\n                } else if (error.request) {\r\n                    console.error(\"No response received:\", error.request);\r\n                } else {\r\n                    console.error(\"Error:\", error.message);\r\n                }\r\n            });\r\n    };\r\n\r\n    return (\r\n        <Card title=\"Register\">\r\n            <div className={\"register-form-main\"}>\r\n                <span className=\"p-float-label\">\r\n                    <InputText id=\"name\"\r\n                               value={name}\r\n                               onChange={(e) => setName(e.target.value)}\r\n                               style={{width: \"100%\"}}\r\n                    />\r\n                    <label htmlFor=\"name\">First Name</label>\r\n                </span>\r\n                <span className=\"p-float-label\">\r\n                    <InputText id=\"lastname\"\r\n                               value={lastName}\r\n                               onChange={(e) => setLastName(e.target.value)}\r\n                               style={{width: \"100%\"}}\r\n                    />\r\n                    <label htmlFor=\"lastname\">Last Name</label>\r\n                </span>\r\n                <span className=\"p-float-label\">\r\n                    <InputText id=\"email\"\r\n                               value={email}\r\n                               onChange={(e) => setEmail(e.target.value)}\r\n                               style={{width: \"100%\"}}\r\n                    />\r\n                    <label htmlFor=\"email\">Email</label>\r\n                </span>\r\n                <span className=\"p-float-label\">\r\n                    <InputText id=\"password\"\r\n                               value={password}\r\n                               onChange={(e) => setPassword(e.target.value)}\r\n                               type={\"password\"}\r\n                               style={{width: \"100%\"}}\r\n                    />\r\n                    <label htmlFor=\"password\">Password</label>\r\n                </span>\r\n\r\n                <span className=\"p-float-label\">\r\n                    <InputText id=\"repeatpassword\"\r\n                               value={password2}\r\n                               onChange={(e) => setPassword2(e.target.value)}\r\n                               type={\"password\"}\r\n                               style={{width: \"100%\"}}\r\n                    />\r\n                    <label htmlFor=\"password\">Repeat Password</label>\r\n                </span>\r\n\r\n                <Calendar value={dob}\r\n                          onChange={(e) => setDob(e.value)}\r\n                          placeholder={\"Date Of Birth\"}\r\n                />\r\n\r\n                <span className=\"p-float-label\">\r\n                    <InputText id=\"number\"\r\n                               value={number}\r\n                               onChange={(e) => setNumber(e.target.value)}\r\n                               keyfilter={\"int\"}\r\n                               style={{width: \"100%\"}}\r\n                    />\r\n                    <label htmlFor=\"number\">Phone Number</label>\r\n                </span>\r\n\r\n                <div className={\"gender-form\"}>\r\n                    <b>Gender</b>\r\n                    <div className={\"gender-form-inside\"}>\r\n                        <RadioButton inputId=\"MALE\" name=\"gender\" value=\"MALE\" onChange={(e) => setGender(e.value)}\r\n                                     checked={gender === 'MALE'}/>\r\n                        <label htmlFor=\"MALE\">Male</label>\r\n                    </div>\r\n\r\n                    <div className={\"gender-form-inside\"}>\r\n                        <RadioButton inputId=\"FEMALE\" name=\"gender\" value=\"FEMALE\" onChange={(e) => setGender(e.value)}\r\n                                     checked={gender === 'FEMALE'}/>\r\n                        <label htmlFor=\"FEMALE\">Female</label>\r\n                    </div>\r\n                </div>\r\n\r\n                <Button label=\"Submit\"\r\n                        onClick={(e) => handleSubmit(e)}\r\n                        disabled={submitted}\r\n                />\r\n            </div>\r\n        </Card>\r\n    )\r\n}\r\n\r\nexport default RegisterForm
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/register/RegisterForm.jsx b/src/components/register/RegisterForm.jsx
+--- a/src/components/register/RegisterForm.jsx	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/register/RegisterForm.jsx	(date 1702073370165)
+@@ -134,7 +134,8 @@
+     };
+ 
+     return (
+-        <Card title="Register">
++        <div className="registration">
++        <Card containerStyle={{ elevation: 0, borderColor: "white" }} title="Register">
+             <div className={"register-form-main"}>
+                 <span className="p-float-label">
+                     <InputText id="name"
+@@ -210,12 +211,14 @@
+                     </div>
+                 </div>
+ 
+-                <Button label="Submit"
++                <Button label="SUBMIT"
+                         onClick={(e) => handleSubmit(e)}
+                         disabled={submitted}
+                 />
+             </div>
+         </Card>
++        
++        </div>
+     )
+ }
+ 
+Index: src/components/items/foundItems/FoundItemsCard.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.getAllcontainer {\r\n    font-family: 'Bentham';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    display: flex;\r\n    flex-wrap:wrap;\r\n    gap: 20px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}    \r\n\r\n  .wrapper {\r\n    height: 420px;\r\n    width: 600px;\r\n    margin: 10px auto;\r\n    border-radius: 7px 7px 7px 7px;\r\n    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);\r\n  }\r\n  \r\n  .product-img {\r\n    float: left;\r\n    height: 420px;\r\n    width: 300px;\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  \r\n  .product-img img {\r\n    border-radius: 7px 0 0 7px;\r\n  }\r\n  \r\n  .product-info {\r\n    float: left;\r\n    height: 420px;\r\n    width: 300px;\r\n    border-radius: 0 7px 10px 7px;\r\n    background-color: #ffffff;\r\n  }\r\n    \r\n  .product-text {\r\n    height: 300px;\r\n    width: 327px;\r\n  }\r\n  \r\n  .product-text h1 {\r\n    margin: 0 0 0 38px;\r\n    padding-top: 52px;\r\n    font-size: 34px;\r\n    color: #474747;\r\n  }\r\n  \r\n  .product-text h1,\r\n  .product-price-btn p {\r\n    font-family: 'Bentham', serif;\r\n  }\r\n  \r\n  .product-text h2 {\r\n    margin: 0 0 47px 38px;\r\n    font-size: 13px;\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 400;\r\n    text-transform: uppercase;\r\n    color: #d2d2d2;\r\n    letter-spacing: 0.2em;\r\n  }\r\n  \r\n  .product-text p {\r\n    height: 125px;\r\n    margin: 0 0 0 38px;\r\n    font-family: 'Playfair Display', serif;\r\n    color: #8d8d8d;\r\n    line-height: 1.7em;\r\n    font-size: 15px;\r\n    font-weight: lighter;\r\n    overflow: hidden;\r\n  }\r\n  \r\n  .product-price-btn {\r\n    height: 103px;\r\n    width: 327px;\r\n    margin-top: 17px;\r\n    position: relative;\r\n  }\r\n  \r\n  .product-price-btn p {\r\n    display: inline-block;\r\n    position: absolute;\r\n    top: -13px;\r\n    height: 50px;\r\n    font-family: 'Trocchi', serif;\r\n    margin: 0 0 0 38px;\r\n    font-size: 28px;\r\n    font-weight: lighter;\r\n    color: #474747;\r\n  }\r\n  \r\n  span {\r\n    display: inline-block;\r\n    height: 50px;\r\n    font-family: 'Suranna', serif;\r\n    font-size: 34px;\r\n  }\r\n  \r\n  .product-price-btn button {\r\n    float: right;\r\n    display: inline-block;\r\n    height: 50px;\r\n    width: 176px;\r\n    margin: 0 40px 0 16px;\r\n    box-sizing: border-box;\r\n    border: transparent;\r\n    border-radius: 60px;\r\n    font-family: 'Raleway', sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    text-transform: uppercase;\r\n    letter-spacing: 0.2em;\r\n    color: #ffffff;\r\n    background-color: #9cebd5;\r\n    cursor: pointer;\r\n    outline: none;\r\n  }\r\n  \r\n  .product-price-btn button:hover {\r\n    background-color: #79b0a1;\r\n  }\r\n\r\n  .p-card {\r\n        background-color: #B2D2CA;\r\n        padding: 15px;\r\n  }\r\n\r\n  .search-input {\r\n    width: 30%;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    border-radius: 7px;\r\n    float:right;\r\n    margin-right: 20px;\r\n  }\r\n\r\n  .custom-select {\r\n    width: 30%;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    border-radius: 7px;\r\n    float:right;\r\n    margin-right: 20px;\r\n  }\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/items/foundItems/FoundItemsCard.css b/src/components/items/foundItems/FoundItemsCard.css
+--- a/src/components/items/foundItems/FoundItemsCard.css	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/items/foundItems/FoundItemsCard.css	(date 1702159998998)
+@@ -48,7 +48,7 @@
+     margin: 0 0 0 38px;
+     padding-top: 52px;
+     font-size: 34px;
+-    color: #474747;
++    color: #474747ae;
+   }
+   
+   .product-text h1,
+@@ -62,7 +62,7 @@
+     font-family: 'Raleway', sans-serif;
+     font-weight: 400;
+     text-transform: uppercase;
+-    color: #d2d2d2;
++    color: #474747ae;
+     letter-spacing: 0.2em;
+   }
+   
+@@ -70,7 +70,7 @@
+     height: 125px;
+     margin: 0 0 0 38px;
+     font-family: 'Playfair Display', serif;
+-    color: #8d8d8d;
++    color: #474747ae;
+     line-height: 1.7em;
+     font-size: 15px;
+     font-weight: lighter;
+Index: src/components/items/foundItems/FoundItemsCard.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useEffect, useRef, useState} from 'react';\r\nimport axiosInstance from \"../../../api/customAxios\";\r\nimport {Card} from 'react-bootstrap';\r\nimport styles from './FoundItemsCard.css';\r\nimport {ConfirmPopup} from \"primereact/confirmpopup\";\r\nimport {toast} from \"react-toastify\";\r\nimport {Dialog} from \"primereact/dialog\";\r\nimport UserInfoWindow from '../../user/InfoWindow/UserInfoWindow';\r\nimport {Button} from 'primereact/button';\r\n\r\n\r\nconst FoundItemsCard = () => {\r\n    const [error, setError] = useState(null);\r\n    const [isLoaded, setIsLoaded] = useState(false);\r\n    const [foundItems, setFoundItems] = useState([]);\r\n    const [q, setQ] = useState(\"\");\r\n    const [searchParam] = useState([\"title\", \"category\", \"dateFound\", \"description\"]);\r\n    const [filterParam, setFilterParam] = useState([\"All\"]);\r\n\r\n    useEffect(() => {\r\n        axiosInstance.get(\"/api/v1/foundItem/all\")\r\n            .then((response) => {\r\n                    setIsLoaded(true);\r\n                    setFoundItems(response.data)\r\n                }, (error) => {\r\n                    setIsLoaded(true);\r\n                    setError(error);\r\n                }\r\n            );\r\n    }, []);\r\n\r\n\r\n    function search(items) {\r\n        return items.filter((item) => {\r\n            if (item.category == filterParam) {\r\n                return searchParam.some((newItem) => {\r\n                    return (\r\n                        item[newItem]\r\n                            .toString()\r\n                            .toLowerCase()\r\n                            .indexOf(q.toLowerCase()) > -1\r\n                    );\r\n                });\r\n            } else if (filterParam == \"All\") {\r\n                return searchParam.some((newItem) => {\r\n                    return (\r\n                        item[newItem]\r\n                            .toString()\r\n                            .toLowerCase()\r\n                            .indexOf(q.toLowerCase()) > -1\r\n                    );\r\n                });\r\n            }\r\n        });\r\n    }\r\n\r\n    if (error) {\r\n        return <>{error.message}</>;\r\n    } else if (!isLoaded) {\r\n        return <>loading...</>;\r\n    } else {\r\n        return (\r\n            <div>\r\n                <div className=\"search-wrapper\">\r\n                    <label htmlFor=\"search-form\">\r\n                        <input\r\n                            type=\"search\"\r\n                            name=\"search-form\"\r\n                            id=\"search-form\"\r\n                            className=\"search-input\"\r\n                            placeholder=\"Search...\"\r\n                            value={q}\r\n                            onChange={(e) => setQ(e.target.value)}\r\n                        />\r\n\r\n                    </label>\r\n                    <div className=\"select\">\r\n                        <select\r\n                            onChange={(e) => {\r\n                                setFilterParam(e.target.value);\r\n                            }}\r\n                            className=\"custom-select\"\r\n                            aria-label=\"Filter Items By Categories\"\r\n                        >\r\n                            <option value=\"All\">Filter By Category</option>\r\n                            <option value=\"CLOTHES\">CLOTHES</option>\r\n                            <option value=\"WALLET\">WALLET</option>\r\n                            <option value=\"PHONE\">PHONE</option>\r\n                            <option value=\"JEWELRY\">JEWELRY</option>\r\n                            <option value=\"GLASSES\">GLASSES</option>\r\n                            <option value=\"KEYS\">KEYS</option>\r\n                            <option value=\"OTHER\">OTHER</option>\r\n                        </select>\r\n                        <span className=\"focus\"></span>\r\n                    </div>\r\n                </div>\r\n\r\n                <div className=\"getAllcontainer\">\r\n\r\n                    {search(foundItems).map((item, index) => (\r\n                        <Card\r\n                            key={index}>\r\n                            <div className=\"wrapper\">\r\n                                <div className=\"product-img\">\r\n                                    <img\r\n                                        src=\"https://cdn3.iconfinder.com/data/icons/search-36/512/283_Find_Search_View-256.png\"\r\n                                        width=\"327\" alt={\"photo\"}/>\r\n                                </div>\r\n                                <div className=\"product-info\">\r\n                                    <div className=\"product-text\">\r\n                                        <h1>{item.title}</h1>\r\n                                        <h2>Category: {item.category}</h2>\r\n                                        <h2>Date Found: {item.dateFound}</h2>\r\n                                        <p>{item.description}</p></div>\r\n                                    <div className=\"product-price-btn\">\r\n                                        <p><span>Yours?</span></p>\r\n\r\n                                        <button>More Info</button>\r\n\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </Card>\r\n                    ))}\r\n                </div>\r\n            </div>\r\n        );\r\n    }\r\n}\r\n\r\nexport default FoundItemsCard
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/items/foundItems/FoundItemsCard.jsx b/src/components/items/foundItems/FoundItemsCard.jsx
+--- a/src/components/items/foundItems/FoundItemsCard.jsx	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/items/foundItems/FoundItemsCard.jsx	(date 1702168798353)
+@@ -2,14 +2,12 @@
+ import axiosInstance from "../../../api/customAxios";
+ import {Card} from 'react-bootstrap';
+ import styles from './FoundItemsCard.css';
+-import {ConfirmPopup} from "primereact/confirmpopup";
+-import {toast} from "react-toastify";
+ import {Dialog} from "primereact/dialog";
+-import UserInfoWindow from '../../user/InfoWindow/UserInfoWindow';
+ import {Button} from 'primereact/button';
+-
++import { ProgressSpinner } from 'primereact/progressspinner';
+ 
+ const FoundItemsCard = () => {
++    const [selectedFound, setSelectedFound ] = useState(null);
+     const [error, setError] = useState(null);
+     const [isLoaded, setIsLoaded] = useState(false);
+     const [foundItems, setFoundItems] = useState([]);
+@@ -17,18 +15,23 @@
+     const [searchParam] = useState(["title", "category", "dateFound", "description"]);
+     const [filterParam, setFilterParam] = useState(["All"]);
+ 
+-    useEffect(() => {
++    const getData = () => {
+         axiosInstance.get("/api/v1/foundItem/all")
+             .then((response) => {
+                     setIsLoaded(true);
+                     setFoundItems(response.data)
+-                }, (error) => {
+-                    setIsLoaded(true);
+-                    setError(error);
+-                }
+-            );
++                    console.log(response.data)
++                    
++                });
++            }
++    
++    useEffect(() => {
++        getData()
+     }, []);
+ 
++    const onSelectFound = item => {
++        setSelectedFound(item);
++    };
+ 
+     function search(items) {
+         return items.filter((item) => {
+@@ -57,7 +60,9 @@
+     if (error) {
+         return <>{error.message}</>;
+     } else if (!isLoaded) {
+-        return <>loading...</>;
++        return <div style={{display:"flex", justifyContent:"center", alignItems:"center", overflow: "hidden"}}>
++                    <ProgressSpinner style={{overflow:"hidden"}} />
++                </div>;
+     } else {
+         return (
+             <div>
+@@ -113,15 +118,31 @@
+                                         <h2>Date Found: {item.dateFound}</h2>
+                                         <p>{item.description}</p></div>
+                                     <div className="product-price-btn">
+-                                        <p><span>Yours?</span></p>
+-
+-                                        <button>More Info</button>
+-
++                                    <Button onClick={() => {onSelectFound(item)}}>More info</Button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </Card>
+-                    ))}
++                    ))
++                    }
++                    
++                    {          
++                        selectedFound && (
++                        <Dialog
++                            visible={true}
++                            onHide= { () => setSelectedFound (false)}>
++                            <div>
++                                <Card>
++                                    <div className="contact-info">
++                                            <h1>Contact Info</h1>
++                                            <h2>Email: {selectedFound.user.email}</h2>
++                                            <h2>Phone: {selectedFound.user.phoneNumber}</h2>
++                                    </div>
++                                </Card>
++                            </div>
++                        </Dialog>
++                        )
++                    }
+                 </div>
+             </div>
+         );
+Index: src/components/items/foundItems/FoundItemAddForm.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.foundItemAdd-form-main {\r\n    display: flex;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    gap: 25px;\r\n    font-size: 15px;\r\n}\r\n\r\n.gender-form {\r\n    display: flex;\r\n    gap: 10px;\r\n}\r\n\r\n.gender-form-inside {\r\n    display: flex;\r\n    gap: 3px;\r\n}\r\n\r\n.p-card {\r\n    border-radius: 7px;\r\n}\r\n\r\nlabel {\r\n    font-size: 20px;\r\n}\r\n\r\n.p-inputtext {\r\n    margin: 0;\r\n    font-size: 20px;\r\n}\r\n\r\n.p-card-body {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background-color: white;\r\n    border-radius: 7px;\r\n    height: 100%;\r\n\r\n}\r\n\r\n.p-card-content {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    height: fit-content;\r\n}\r\n\r\n.Button {\r\n    border-color: grey;\r\n    color: white;\r\n    font-size: 20px;\r\n    font-family: 'Bentham', serif;\r\n}\r\n\r\nh1 {\r\n    font-family: 'Bentham', serif;\r\n}\r\n\r\n.p-calendar .p-inputtext {\r\n    width: 100%;\r\n    font-size: 15px;\r\n    font-family: 'Bentham', serif;\r\n}\r\n\r\n#description {\r\n    resize: none;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/items/foundItems/FoundItemAddForm.css b/src/components/items/foundItems/FoundItemAddForm.css
+--- a/src/components/items/foundItems/FoundItemAddForm.css	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/items/foundItems/FoundItemAddForm.css	(date 1702160067331)
+@@ -1,9 +1,21 @@
++.addingform {
++    height: 100%;
++    display: flex;
++    flex-wrap: wrap;
++    flex-direction: row;
++}
++
+ .foundItemAdd-form-main {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     gap: 25px;
+     font-size: 15px;
++    border: 1px solid rgb(197, 197, 197);
++    padding: 20px;
++    border-radius: 7px;
++    box-shadow: 7px;
++
+ }
+ 
+ .gender-form {
+@@ -18,6 +30,7 @@
+ 
+ .p-card {
+     border-radius: 7px;
++    background-color: white;
+ }
+ 
+ label {
+@@ -35,7 +48,7 @@
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+-    background-color: white;
++   
+     border-radius: 7px;
+     height: 100%;
+ 
+@@ -67,4 +80,21 @@
+ 
+ #description {
+     resize: none;
++}
++
++.select-category {
++    margin-top: 20px;
++    height: 35px;
++    border-radius: 7px;
++    border: 1.5px solid rgb(179, 179, 179);
++    color: gray;
++    font-size: 15px;
++}
++
++.p-button-label {
++    font-size: 20px;
++    display: flex;
++    justify-content: center;
++    align-items: center;
++    color: white;
+ }
+\ No newline at end of file
+Index: src/components/login/LoginForm.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useState} from 'react'\r\n\r\nimport {Card} from 'primereact/card';\r\nimport {InputText} from \"primereact/inputtext\";\r\nimport {Button} from \"primereact/button\";\r\n\r\nimport \"./LoginForm.css\";\r\nimport axiosInstance from \"../../api/customAxios\";\r\nimport {useAuth} from \"../../provider/authProvider\";\r\nimport {useNavigate} from \"react-router-dom\";\r\nimport {toast} from \"react-toastify\";\r\n\r\nconst LoginForm = () => {\r\n    const [submitted, setSubmitted] = useState(false)\r\n    const {setToken, setRefreshToken} = useAuth();\r\n    const navigate = useNavigate();\r\n\r\n    const [email, setEmail] = useState(\"\")\r\n    const [password, setPassword] = useState(\"\")\r\n\r\n    const handleSubmit = async (e) => {\r\n        e.preventDefault();\r\n\r\n        setSubmitted(true)\r\n\r\n        if(email.length<4) {\r\n            toast.warning(\"Email too short. Min. 4\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(password.length<4) {\r\n            toast.warning(\"Password too short. Min. 4\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(email.length>32) {\r\n            toast.warning(\"Email too long. Max. 32\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if(password.length>32) {\r\n            toast.warning(\"Password too long. Max. 32\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n\r\n        axiosInstance.post(\"/api/v1/auth/authenticate\", {\r\n            \"email\": email,\r\n            \"password\": password\r\n        })\r\n            .then(response => {\r\n                if(response.data.access_token && response.data.refresh_token) {\r\n                    setToken(response.data.access_token)\r\n                    setRefreshToken(response.data.refresh_token)\r\n                }\r\n                navigate(\"/main/index\")\r\n            })\r\n            .catch(error => {\r\n                toast.error(\"Wrong email or password!\");\r\n                setSubmitted(false)\r\n                if (error.response) {\r\n                    console.error(\"Error status:\", error.response.status);\r\n                    console.error(\"Error data:\", error.response.data);\r\n                } else if (error.request) {\r\n                    console.error(\"No response received:\", error.request);\r\n                } else {\r\n                    console.error(\"Error:\", error.message);\r\n                }\r\n            });\r\n\r\n\r\n    };\r\n\r\n    return (\r\n        <Card title=\"Login\">\r\n            <div className={\"login-form-main\"}>\r\n                  <span className=\"p-float-label\">\r\n                <InputText id=\"email\"\r\n                           value={email}\r\n                           onChange={(e) => setEmail(e.target.value)}\r\n                           style={{width: \"100%\"}}\r\n                           minLength={4}\r\n                />\r\n                <label htmlFor=\"email\">Email</label>\r\n            </span>\r\n                <span className=\"p-float-label\">\r\n                <InputText id=\"password\"\r\n                           value={password}\r\n                           onChange={(e) => setPassword(e.target.value)}\r\n                           type={\"password\"}\r\n                           style={{width: \"100%\"}}\r\n                           minLength={4}\r\n                />\r\n                <label htmlFor=\"password\">Password</label>\r\n            </span>\r\n            \r\n            <div>\r\n            <img src='https://th.bing.com/th/id/R.8ddf4c8f5b3dfb30ff3edfb4ca6358a3?rik=e%2f6aTxrfLPzEyA&riu=http%3a%2f%2fwww.yourzbs.com%2fwp-content%2fuploads%2f2019%2f06%2fThe-Emotional-Side-Of-Returning-Lost-Objects.jpg&ehk=UrjhuURD%2f3HZ%2bBoNc4uEkhuA6bEn3KJ7YWvo2FTBLJg%3d&risl=&pid=ImgRaw&r=0' style={{height:\"310px\", borderRadius:\"7px\"}}></img>\r\n            </div>\r\n            <span>\r\n                <Button label=\"Submit\"\r\n                        onClick={(e) => handleSubmit(e)}\r\n                        style={{width:\"100%\"}}\r\n                        disabled={submitted}\r\n                />\r\n                </span>\r\n            </div>\r\n        </Card>\r\n    )\r\n}\r\n\r\n\r\nexport default LoginForm
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/login/LoginForm.jsx b/src/components/login/LoginForm.jsx
+--- a/src/components/login/LoginForm.jsx	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/login/LoginForm.jsx	(date 1702076102968)
+@@ -76,6 +76,7 @@
+     };
+ 
+     return (
++        <div className="loginform">
+         <Card title="Login">
+             <div className={"login-form-main"}>
+                   <span className="p-float-label">
+@@ -99,10 +100,10 @@
+             </span>
+             
+             <div>
+-            <img src='https://th.bing.com/th/id/R.8ddf4c8f5b3dfb30ff3edfb4ca6358a3?rik=e%2f6aTxrfLPzEyA&riu=http%3a%2f%2fwww.yourzbs.com%2fwp-content%2fuploads%2f2019%2f06%2fThe-Emotional-Side-Of-Returning-Lost-Objects.jpg&ehk=UrjhuURD%2f3HZ%2bBoNc4uEkhuA6bEn3KJ7YWvo2FTBLJg%3d&risl=&pid=ImgRaw&r=0' style={{height:"310px", borderRadius:"7px"}}></img>
++            <img src='https://th.bing.com/th/id/R.e797bc2dbec1d27d8f6532f6e48f75d3?rik=MX39sRvEHANpQA&pid=ImgRaw&r=0' style={{height:"310px", borderRadius:"7px"}}></img>
+             </div>
+             <span>
+-                <Button label="Submit"
++                <Button label="SUBMIT"
+                         onClick={(e) => handleSubmit(e)}
+                         style={{width:"100%"}}
+                         disabled={submitted}
+@@ -110,6 +111,7 @@
+                 </span>
+             </div>
+         </Card>
++        </div>
+     )
+ }
+ 
+Index: src/components/items/foundItems/FoundItemAddForm.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useState, useEffect} from 'react';\r\nimport {InputText} from \"primereact/inputtext\";\r\nimport {Button} from \"primereact/button\";\r\nimport {InputLabel} from '@mui/material'\r\n\r\nimport {Calendar} from \"primereact/calendar\";\r\nimport axiosInstance from \"../../../api/customAxios\";\r\nimport {toast} from \"react-toastify\";\r\nimport MapWithMarker from '../../map/MapWithMarker';\r\nimport {InputTextarea} from \"primereact/inputtextarea\";\r\n\r\nimport \"./FoundItemAddForm.css\";\r\n\r\nconst FoundItemAddForm = () => {\r\n    const [title, setTitle] = useState('');\r\n    const [category, setCategory] = useState('');\r\n    const [categories, setCategories] = useState([]);\r\n    const [dateFound, setDateFound] = useState('');\r\n    const [description, setDescription] = useState('');\r\n    const [longitude, setLongitude] = useState(0.0);\r\n    const [latitude, setLatitude] = useState(0.0);\r\n\r\n    const [restartValue, setRestartValue] = useState(1)\r\n\r\n    const [submitted, setSubmitted] = useState(false)\r\n\r\n    const getCategories = () => {\r\n        axiosInstance.get(\"/api/v1/categories/all\")\r\n            .then((response) => {\r\n                setCategories(response.data)\r\n            })\r\n    }\r\n\r\n    useEffect(() => {\r\n        getCategories()\r\n    }, []);\r\n\r\n\r\n    const upadateSelectCategory = e => {\r\n        setCategory(e.target.value);\r\n    };\r\n\r\n    const onSubmit = () => {\r\n        setSubmitted(true)\r\n        if (title.length < 4) {\r\n            toast.warning(\"Title too short. Min. 4\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if (title.length > 50) {\r\n            toast.warning(\"Title too long. Max. 4\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if (description.length < 4) {\r\n            toast.warning(\"Description too short. Min. 4\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if (category.length === 0) {\r\n            toast.warning(\"You have not picked category\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if (dateFound.length === 0) {\r\n            toast.warning(\"You have not picked date\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        if (latitude === 0.0 && longitude === 0.0) {\r\n            toast.warning(\"You have not picked location\")\r\n            setSubmitted(false)\r\n            return\r\n        }\r\n\r\n        axiosInstance.post('/api/v1/foundItem/add-new', {\r\n            title: title,\r\n            category: category,\r\n            dateFound: dateFound.toISOString().substring(0, 10),\r\n            description: description,\r\n            coordinates: {\r\n                longitude: longitude,\r\n                latitude: latitude,\r\n            },\r\n            imageUrl: \"test\"\r\n        })\r\n            .then((response) => {\r\n                toast.success(\"Item added successfully\")\r\n                setTitle('');\r\n                setCategory('');\r\n                setDateFound('');\r\n                setDescription('');\r\n                setLongitude(0.0);\r\n                setLatitude(0.0);\r\n                setSubmitted(false)\r\n                setRestartValue(val=> val+1)\r\n            })\r\n            .catch((er) => {\r\n                toast.error(er.message)\r\n                setSubmitted(false)\r\n            })\r\n\r\n\r\n    };\r\n\r\n\r\n    return (\r\n\r\n        <div className={\"foundItemAdd-form-main\"}>\r\n        \r\n                <span className=\"p-float-label\">\r\n                    <InputText id=\"title\"\r\n                               value={title}\r\n                               onChange={(e) => setTitle(e.target.value)}\r\n                               style={{width: \"100%\"}}\r\n                    />\r\n                    <label htmlFor=\"title\">Title</label>\r\n                </span>\r\n\r\n            <span className=\"p-float-label\">\r\n                    <InputTextarea id=\"description\"\r\n                                   value={description}\r\n                                   onChange={(e) => setDescription(e.target.value)}\r\n                    />\r\n                    <label htmlFor=\"description\">Description</label>\r\n                </span>\r\n\r\n            <span>\r\n                  <select onChange={upadateSelectCategory} value={category} style={{width: \"100%\"}}>\r\n                      <option value=\"\">-- Category --</option>\r\n                      {categories.map((item, index) => (\r\n                          <option key={item}>{item}</option>))}\r\n                  </select>\r\n                </span>\r\n\r\n            <span className=\"p-float-label\">\r\n                   <Calendar value={dateFound}\r\n                             id={\"calendar\"}\r\n                             onChange={(e) => setDateFound(e.value)}\r\n                             placeholder={\"Date Found\"}\r\n                             style={{width: \"100%\"}}\r\n\r\n                   />\r\n                    <label htmlFor=\"calendar\">Date</label>\r\n                </span>\r\n\r\n            <InputLabel\r\n                style={{color: \"black\"}}>\r\n                Where did you found item? (Double click)\r\n            </InputLabel>\r\n\r\n            <MapWithMarker\r\n                coordinates={(coordinates) => {\r\n                    setLatitude(coordinates.lat)\r\n                    setLongitude(coordinates.lng)\r\n                }}\r\n                restart={restartValue}\r\n            ></MapWithMarker>\r\n\r\n            <Button label=\"Submit\"\r\n                    onClick={() => onSubmit()}\r\n                    disabled={submitted}\r\n            />\r\n        </div>\r\n\r\n    )\r\n\r\n}\r\n\r\n\r\nexport default FoundItemAddForm
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/items/foundItems/FoundItemAddForm.jsx b/src/components/items/foundItems/FoundItemAddForm.jsx
+--- a/src/components/items/foundItems/FoundItemAddForm.jsx	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/items/foundItems/FoundItemAddForm.jsx	(date 1702171151829)
+@@ -110,7 +110,7 @@
+ 
+ 
+     return (
+-
++    <div className="adding-form">
+         <div className={"foundItemAdd-form-main"}>
+         
+                 <span className="p-float-label">
+@@ -131,7 +131,7 @@
+                 </span>
+ 
+             <span>
+-                  <select onChange={upadateSelectCategory} value={category} style={{width: "100%"}}>
++                  <select className='select-category' onChange={upadateSelectCategory} value={category} style={{width: "100%"}}>
+                       <option value="">-- Category --</option>
+                       {categories.map((item, index) => (
+                           <option key={item}>{item}</option>))}
+@@ -167,6 +167,7 @@
+                     disabled={submitted}
+             />
+         </div>
++    </div>
+ 
+     )
+ 
+Index: src/components/login/LoginForm.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.login-form-main {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap:25px;\r\n    padding: 20px 100px;\r\n    font-size: 15px;\r\n    border-radius: 7px 7px 7px 7px;\r\n    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);\r\n    \r\n}\r\n\r\n.p-card-content {\r\n    height: fit-content;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/login/LoginForm.css b/src/components/login/LoginForm.css
+--- a/src/components/login/LoginForm.css	(revision e797ced14c53db136cd979b1e693edce5f2e0307)
++++ b/src/components/login/LoginForm.css	(date 1702111984876)
+@@ -1,3 +1,18 @@
++.loginform {
++    background-image: url("https://th.bing.com/th/id/R.e797bc2dbec1d27d8f6532f6e48f75d3?rik=MX39sRvEHANpQA&pid=ImgRaw&r=0");
++    display: flex;
++    flex-wrap: wrap;
++    background-size: cover;
++    background-repeat: no-repeat;
++    width: 100%;
++    background-position-x: right;
++    background-position-y:bottom;
++    padding-top: 15px;
++    padding-bottom: 10px;
++    padding-left: 150px;
++    height: 100vh;
++}
++
+ .login-form-main {
+     display: flex;
+     flex-direction: column;
+@@ -5,8 +20,7 @@
+     padding: 20px 100px;
+     font-size: 15px;
+     border-radius: 7px 7px 7px 7px;
+-    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+-    
++    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);   
+ }
+ 
+ .p-card-content {
