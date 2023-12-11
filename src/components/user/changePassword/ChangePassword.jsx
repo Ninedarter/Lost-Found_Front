@@ -50,18 +50,21 @@ const ChangePassword = ({close}) => {
         <div></div>
        <span className="p-float-label">
             <InputText id="oldpassword" value={oldPassword}
+                       type={"password"}
                        onChange={(e) => setOldPassword(e.target.value)}/>
             <label htmlFor="oldpassword">Old Password</label>
         </span>
 
         <span className="p-float-label">
             <InputText id="newpassword" value={newPassword}
+                       type={"password"}
                        onChange={(e) => setNewPassword(e.target.value)}/>
             <label htmlFor="newpassword">New Password</label>
         </span>
 
         <span className="p-float-label">
             <InputText id="newpassword2" value={newPassword2}
+                       type={"password"}
                        onChange={(e) => setNewPassword2(e.target.value)}/>
             <label htmlFor="newpassword2">Repeat New Password</label>
         </span>
