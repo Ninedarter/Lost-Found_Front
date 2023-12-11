@@ -4,6 +4,7 @@ import {Card} from 'react-bootstrap';
 import {ProgressSpinner} from 'primereact/progressspinner';
 import {Dialog} from 'primereact/dialog';
 import UserInfoWindow from "../../user/InfoWindow/UserInfoWindow";
+import "./AllLostItems.css";
 
 const AllLostItems = () => {
     const [selectedLost, setSelectedLost] = useState(null);
@@ -107,7 +108,7 @@ const AllLostItems = () => {
                             key={index}>
                             <div className="wrapper">
                                 <div className="product-img">
-                                    <img src="https://clipground.com/images/lost-png-1.png" width="327"/>
+                                    <img src="https://clipground.com/images/lost-png-1.png" width="327" alt={"photo"}/>
                                 </div>
                                 <div className="product-info" style={{overflow:"hidden"}}>
                                     <div className="product-text">
