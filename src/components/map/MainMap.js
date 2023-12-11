@@ -3,6 +3,7 @@ import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/ap
 import axiosInstance from "../../api/customAxios";
 import { Card } from "react-bootstrap";
 import { Dialog } from "primereact/dialog";
+import UserInfoWindow from "../user/InfoWindow/UserInfoWindow";
 
 const MainMap = () =>  {
     const [selectedLost, setSelectedLost ] = useState(null);
@@ -116,16 +117,10 @@ const MainMap = () =>  {
                     selectedFoundMoreInfo && (
                         <Dialog
                             visible={true}
-                            onHide= { () => setSelectedFoundMoreInfo(false)}>
-                            <div>
-                                <Card>
-                                    <div className="contact-info">
-                                            <h1>Contact Info</h1>
-                                            <h2>Email: {selectedFound.user.email}</h2>
-                                            <h2>Phone: {selectedFound.user.phoneNumber}</h2>
-                                    </div>
-                                </Card>
-                            </div>
+                            onHide= { () => setSelectedFoundMoreInfo(false)}
+                            header={"Founder Info"}
+                        >
+                            <UserInfoWindow userId={selectedFound.user.id} />
                         </Dialog>
                         )
                 } 
@@ -180,16 +175,10 @@ const MainMap = () =>  {
                     selectedLostMoreInfo && (
                         <Dialog
                             visible={true}
-                            onHide= { () => setSelectedLostMoreInfo(false)}>
-                            <div>
-                                <Card>
-                                    <div className="contact-info">
-                                            <h1>Contact Info</h1>
-                                            <h2>Email: {selectedLost.user.email}</h2>
-                                            <h2>Phone: {selectedLost.user.phoneNumber}</h2>
-                                    </div>
-                                </Card>
-                            </div>
+                            onHide= { () => setSelectedLostMoreInfo(false)}
+                            header={"Lost Item Owner Info"}
+                        >
+                            <UserInfoWindow userId={selectedLost.user.id} />
                         </Dialog>
                         )
                 } 

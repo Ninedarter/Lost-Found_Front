@@ -5,6 +5,7 @@ import './FoundItemsCard.css';
 import {Dialog} from "primereact/dialog";
 import {Button} from 'primereact/button';
 import { ProgressSpinner } from 'primereact/progressspinner';
+import UserInfoWindow from "../../user/InfoWindow/UserInfoWindow";
 
 const FoundItemsCard = () => {
     const [selectedFound, setSelectedFound ] = useState(null);
@@ -130,16 +131,10 @@ const FoundItemsCard = () => {
                         selectedFound && (
                         <Dialog
                             visible={true}
-                            onHide= { () => setSelectedFound (false)}>
-                            <div>
-                                <Card>
-                                    <div className="contact-info">
-                                            <h1>Contact Info</h1>
-                                            <h2>Email: {selectedFound.user.email}</h2>
-                                            <h2>Phone: {selectedFound.user.phoneNumber}</h2>
-                                    </div>
-                                </Card>
-                            </div>
+                            onHide= { () => setSelectedFound (false)}
+                            header={"Founder Info"}
+                        >
+                           <UserInfoWindow userId={selectedFound.user.id}/>
                         </Dialog>
                         )
                     }

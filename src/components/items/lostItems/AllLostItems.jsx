@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import axiosInstance from "../../../api/customAxios";
 import {Card} from 'react-bootstrap';
-import styles from './AllLostItems.css';
 import {ProgressSpinner} from 'primereact/progressspinner';
 import {Dialog} from 'primereact/dialog';
-import {Button} from 'primereact/button';
+import UserInfoWindow from "../../user/InfoWindow/UserInfoWindow";
 
 const AllLostItems = () => {
     const [selectedLost, setSelectedLost] = useState(null);
@@ -136,16 +135,10 @@ const AllLostItems = () => {
                         selectedLost && (
                             <Dialog
                                 visible={true}
-                                onHide={() => setSelectedLost(false)}>
-                                <div>
-                                    <Card>
-                                        <div className="contact-info">
-                                            <h1>Contact Info</h1>
-                                            <h2>Email: {selectedLost.user.email}</h2>
-                                            <h2>Phone: {selectedLost.user.phoneNumber}</h2>
-                                        </div>
-                                    </Card>
-                                </div>
+                                onHide={() => setSelectedLost(false)}
+                                header={"Lost Item Owner Info"}
+                            >
+                                <UserInfoWindow userId={selectedLost.user.id}/>
                             </Dialog>
                         )
                     }

@@ -84,7 +84,7 @@ const ReportedPlayersAdmin = () => {
                     onClick={() => setVisible(true)}
                     severity="info"
                     size={"small"}
-                    icon={"pi pi-user-minus"}
+                    label={"Ban"}
             ></Button>
         </>
     }
