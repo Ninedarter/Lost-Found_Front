@@ -150,7 +150,7 @@ const LostItemAddForm = () => {
 
             <InputLabel
                 style={{color: "black"}}>
-                Where did you found item? (Double click)
+                Where did you lost item? (Double click)
             </InputLabel>
 
             <MapWithMarker
